@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "VibeWatch — Clip-first movie & TV discovery",
   description: "Watch cinematic clips. Let AI pick what to watch next.",
   icons: {
-    icon: "/logo.png",
+    icon: "images/logo.png",
   },
 };
 

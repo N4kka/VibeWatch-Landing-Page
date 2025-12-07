@@ -52,7 +52,7 @@ export default function Home() {
                     loop
                     muted
                     playsInline
-                    poster="/1.png"
+                    poster="images/1.png"
                   >
                     <source src="/app-demo.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
@@ -155,7 +155,7 @@ export default function Home() {
             <div className="group rounded-2xl border border-border bg-card/40 backdrop-blur p-5 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
               <div className="relative mb-4 rounded-xl overflow-hidden">
                 <Image
-                  src="/2.png"
+                  src="images/2.png"
                   alt="Swipeable clip feed"
                   width={400}
                   height={800}
@@ -175,7 +175,7 @@ export default function Home() {
             <div className="group rounded-2xl border border-border bg-card/40 backdrop-blur p-5 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
               <div className="relative mb-4 rounded-xl overflow-hidden">
                 <Image
-                  src="/3.png"
+                  src="images/3.png"
                   alt="Create custom watchlists"
                   width={400}
                   height={800}
@@ -195,7 +195,7 @@ export default function Home() {
             <div className="group rounded-2xl border border-border bg-card/40 backdrop-blur p-5 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
               <div className="relative mb-4 rounded-xl overflow-hidden">
                 <Image
-                  src="/4.png"
+                  src="images/4.png"
                   alt="Detailed movie information"
                   width={400}
                   height={800}
@@ -215,7 +215,7 @@ export default function Home() {
             <div className="group rounded-2xl border border-border bg-card/40 backdrop-blur p-5 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
               <div className="relative mb-4 rounded-xl overflow-hidden">
                 <Image
-                  src="/5.png"
+                  src="images/5.png"
                   alt="Search and trending movies"
                   width={400}
                   height={800}

@@ -5,7 +5,13 @@
       "Bash(npm install)",
       "Bash(npm install:*)",
       "Bash(npm run dev:*)",
-      "WebFetch(domain:www.justwatch.com)"
+      "WebFetch(domain:www.justwatch.com)",
+      "Bash(npm run build:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(netlify sites:create:*)",
+      "Bash(git config:*)",
+      "Bash(brew install:*)"
     ],
     "deny": [],
     "ask": []
