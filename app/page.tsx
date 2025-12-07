@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { StickyCTA } from "@/components/sticky-cta";
-import { Play, Sparkles, Heart, TrendingUp, Clock, Users, CheckCircle2, X as XIcon } from "lucide-react";
+import { Play, Sparkles, Heart, TrendingUp, Clock, CheckCircle2, X as XIcon } from "lucide-react";
 
 export default function Home() {
   return (
@@ -52,7 +52,7 @@ export default function Home() {
                     loop
                     muted
                     playsInline
-                    poster="images/1.png"
+                    poster="/1.png"
                   >
                     <source src="/app-demo.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
@@ -231,19 +231,19 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Feature Card - Vibe AI */}
+            {/* Screenshot 6 - Vibe AI */}
             <div className="group rounded-2xl border-2 border-primary/50 bg-gradient-to-br from-primary/20 via-transparent to-blue-500/20 backdrop-blur p-5 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
-              <div className="flex items-center justify-center h-[300px] mb-4 rounded-xl bg-gradient-to-br from-primary/30 to-blue-500/30">
-                <div className="text-center">
-                  <Sparkles className="w-16 h-16 text-primary mx-auto mb-4" />
-                  <div className="text-2xl font-bold">Ask Vibe AI</div>
-                  <div className="text-sm text-muted-foreground mt-2 px-4">
-                    "Cozy mysteries under 2 hours"
-                  </div>
-                </div>
+              <div className="relative mb-4 rounded-xl overflow-hidden">
+                <Image
+                  src="/6.png"
+                  alt="Vibe AI chat interface"
+                  width={400}
+                  height={800}
+                  className="w-full h-auto"
+                />
               </div>
               <div className="flex items-center gap-2 mb-2">
-                <Users className="w-5 h-5 text-primary" />
+                <Sparkles className="w-5 h-5 text-primary" />
                 <h3 className="text-xl font-semibold">Vibe AI Assistant</h3>
               </div>
               <p className="text-muted-foreground">
