@@ -155,7 +155,7 @@ export default function Home() {
             <div className="group rounded-2xl border border-border bg-card/40 backdrop-blur p-5 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
               <div className="relative mb-4 rounded-xl overflow-hidden">
                 <Image
-                  src="images/2.png"
+                  src="/2.png"
                   alt="Swipeable clip feed"
                   width={400}
                   height={800}
@@ -175,7 +175,7 @@ export default function Home() {
             <div className="group rounded-2xl border border-border bg-card/40 backdrop-blur p-5 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
               <div className="relative mb-4 rounded-xl overflow-hidden">
                 <Image
-                  src="images/3.png"
+                  src="/3.png"
                   alt="Create custom watchlists"
                   width={400}
                   height={800}
@@ -195,7 +195,7 @@ export default function Home() {
             <div className="group rounded-2xl border border-border bg-card/40 backdrop-blur p-5 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
               <div className="relative mb-4 rounded-xl overflow-hidden">
                 <Image
-                  src="images/4.png"
+                  src="/4.png"
                   alt="Detailed movie information"
                   width={400}
                   height={800}
@@ -215,7 +215,7 @@ export default function Home() {
             <div className="group rounded-2xl border border-border bg-card/40 backdrop-blur p-5 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
               <div className="relative mb-4 rounded-xl overflow-hidden">
                 <Image
-                  src="images/5.png"
+                  src="/5.png"
                   alt="Search and trending movies"
                   width={400}
                   height={800}
