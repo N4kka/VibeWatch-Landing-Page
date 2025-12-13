@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { StickyCTA } from "@/components/sticky-cta";
-import { Play, Sparkles, Heart, TrendingUp, Clock, CheckCircle2, X as XIcon } from "lucide-react";
+import { Play, Sparkles, Heart, TrendingUp, Clock, CheckCircle2, X as XIcon, DiamondIcon } from "lucide-react";
 
 export default function Home() {
   return (
@@ -54,7 +54,7 @@ export default function Home() {
                     playsInline
                     poster="/1.png"
                   >
-                    <source src="/app-demo.mp4" type="video/mp4" />
+                    <source src="/vibewatch_trailer.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
@@ -131,31 +131,11 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {/* Screenshot 1 - Discovery */}
+            {/* Screenshot 1 - Clips */}
             <div className="group rounded-2xl border border-border bg-card/40 backdrop-blur p-5 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
               <div className="relative mb-4 rounded-xl overflow-hidden">
                 <Image
                   src="/1.png"
-                  alt="Personalized feed based on your mood"
-                  width={400}
-                  height={800}
-                  className="w-full h-auto"
-                />
-              </div>
-              <div className="flex items-center gap-2 mb-2">
-                <Sparkles className="w-5 h-5 text-primary" />
-                <h3 className="text-xl font-semibold">Smart Discovery</h3>
-              </div>
-              <p className="text-muted-foreground">
-                AI-powered feed learns your taste. Get personalized clips from classics to trending hits.
-              </p>
-            </div>
-
-            {/* Screenshot 2 - Clips */}
-            <div className="group rounded-2xl border border-border bg-card/40 backdrop-blur p-5 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
-              <div className="relative mb-4 rounded-xl overflow-hidden">
-                <Image
-                  src="/2.png"
                   alt="Swipeable clip feed"
                   width={400}
                   height={800}
@@ -169,13 +149,54 @@ export default function Home() {
               <p className="text-muted-foreground">
                 30-second scenes that capture the essence. No spoilers, just pure vibe.
               </p>
+              
             </div>
 
-            {/* Screenshot 3 - Watchlist */}
+            {/* Screenshot 2 - Discovery */}
+            <div className="group rounded-2xl border border-border bg-card/40 backdrop-blur p-5 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
+              <div className="relative mb-4 rounded-xl overflow-hidden">
+                <Image
+                  src="/2.png"
+                  alt="Personalized feed based on your mood"
+                  width={400}
+                  height={800}
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="flex items-center gap-2 mb-2">
+                <DiamondIcon className="w-5 h-5 text-primary" />
+                <h3 className="text-xl font-semibold">Smart Discovery</h3>
+              </div>
+              <p className="text-muted-foreground">
+                AI-powered feed learns your taste. Get personalized clips from classics to trending hits.
+              </p>
+            </div>
+
+            {/* Screenshot 3 - AI */}
             <div className="group rounded-2xl border border-border bg-card/40 backdrop-blur p-5 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
               <div className="relative mb-4 rounded-xl overflow-hidden">
                 <Image
                   src="/3.png"
+                  alt="Vibe AI chat interface"
+                  width={400}
+                  height={800}
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="flex items-center gap-2 mb-2">
+                <Sparkles className="w-5 h-5 text-primary" />
+                <h3 className="text-xl font-semibold">Vibe AI Assistant</h3>
+              </div>
+              <p className="text-muted-foreground">
+                Describe your mood in natural language. Get instant recommendations with preview clips.
+              </p>
+            </div>
+
+            {/* Screenshot 4 - Watchlist */}
+            <div className="group rounded-2xl border border-border bg-card/40 backdrop-blur p-5 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
+              <div className="relative mb-4 rounded-xl overflow-hidden">
+                <Image
+                  src="/4.png"
                   alt="Create custom watchlists"
                   width={400}
                   height={800}
@@ -191,11 +212,11 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Screenshot 4 - Details */}
+            {/* Screenshot 5 - Details */}
             <div className="group rounded-2xl border border-border bg-card/40 backdrop-blur p-5 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
               <div className="relative mb-4 rounded-xl overflow-hidden">
                 <Image
-                  src="/4.png"
+                  src="/5.png"
                   alt="Detailed movie information"
                   width={400}
                   height={800}
@@ -203,7 +224,7 @@ export default function Home() {
                 />
               </div>
               <div className="flex items-center gap-2 mb-2">
-                <TrendingUp className="w-5 h-5 text-primary" />
+                <Clock className="w-5 h-5 text-primary" />
                 <h3 className="text-xl font-semibold">Full Details</h3>
               </div>
               <p className="text-muted-foreground">
@@ -211,11 +232,11 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Screenshot 5 - Search */}
-            <div className="group rounded-2xl border border-border bg-card/40 backdrop-blur p-5 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
+            {/* Screenshot 6 - Search */}
+            <div className="group rounded-2xl border-2 border-primary/50 bg-gradient-to-br from-primary/20 via-transparent to-blue-500/20 backdrop-blur p-5 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
               <div className="relative mb-4 rounded-xl overflow-hidden">
                 <Image
-                  src="/5.png"
+                  src="/6.png"
                   alt="Search and trending movies"
                   width={400}
                   height={800}
@@ -223,31 +244,11 @@ export default function Home() {
                 />
               </div>
               <div className="flex items-center gap-2 mb-2">
-                <Clock className="w-5 h-5 text-primary" />
+                <TrendingUp className="w-5 h-5 text-primary" />
                 <h3 className="text-xl font-semibold">What's Trending</h3>
               </div>
               <p className="text-muted-foreground">
                 See what everyone's watching right now. Never miss the next big thing.
-              </p>
-            </div>
-
-            {/* Screenshot 6 - Vibe AI */}
-            <div className="group rounded-2xl border-2 border-primary/50 bg-gradient-to-br from-primary/20 via-transparent to-blue-500/20 backdrop-blur p-5 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
-              <div className="relative mb-4 rounded-xl overflow-hidden">
-                <Image
-                  src="/6.png"
-                  alt="Vibe AI chat interface"
-                  width={400}
-                  height={800}
-                  className="w-full h-auto"
-                />
-              </div>
-              <div className="flex items-center gap-2 mb-2">
-                <Sparkles className="w-5 h-5 text-primary" />
-                <h3 className="text-xl font-semibold">Vibe AI Assistant</h3>
-              </div>
-              <p className="text-muted-foreground">
-                Describe your mood in natural language. Get instant recommendations with preview clips.
               </p>
             </div>
           </div>
