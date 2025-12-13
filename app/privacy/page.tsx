@@ -91,7 +91,7 @@ export default function PrivacyPage() {
                         rel="noopener noreferrer"
                         className="text-primary hover:underline"
                       >
-                        View Apple's EULA
+                        View Apple&apos;s EULA
                       </a>
                     </div>
                     <div>

@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/components/language-provider";
+import { LanguageSwitcher } from "@/components/language-switcher";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -11,6 +13,8 @@ interface MobileMenuProps {
 }
 
 export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
+  const { t } = useTranslation();
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -54,35 +58,35 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                     onClick={onClose}
                     className="px-5 py-4 rounded-xl hover:bg-secondary/60 transition-colors text-lg font-medium"
                   >
-                    Home
+                    {t("header.nav.home")}
                   </Link>
                   <Link
                     href="/#clips"
                     onClick={onClose}
                     className="px-5 py-4 rounded-xl hover:bg-secondary/60 transition-colors text-lg font-medium"
                   >
-                    Features
+                    {t("header.nav.features")}
                   </Link>
                   <Link
                     href="/#ai"
                     onClick={onClose}
                     className="px-5 py-4 rounded-xl hover:bg-secondary/60 transition-colors text-lg font-medium"
                   >
-                    Vibe AI
+                    {t("header.nav.ai")}
                   </Link>
                   <Link
                     href="/#how"
                     onClick={onClose}
                     className="px-5 py-4 rounded-xl hover:bg-secondary/60 transition-colors text-lg font-medium"
                   >
-                    How it Works
+                    {t("header.nav.how")}
                   </Link>
                   <Link
                     href="/#support"
                     onClick={onClose}
                     className="px-5 py-4 rounded-xl hover:bg-secondary/60 transition-colors text-lg font-medium"
                   >
-                    Support
+                    {t("header.nav.support")}
                   </Link>
 
                   <div className="h-px bg-border my-4" />
@@ -92,14 +96,14 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                     onClick={onClose}
                     className="px-5 py-4 rounded-xl hover:bg-secondary/60 transition-colors text-base text-muted-foreground"
                   >
-                    Terms of Use
+                    {t("header.nav.terms")}
                   </Link>
                   <Link
                     href="/privacy"
                     onClick={onClose}
                     className="px-5 py-4 rounded-xl hover:bg-secondary/60 transition-colors text-base text-muted-foreground"
                   >
-                    Privacy Policy
+                    {t("header.nav.privacy")}
                   </Link>
                 </div>
               </nav>
@@ -108,9 +112,13 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               <div className="p-6 border-t border-border">
                 <Button asChild size="lg" className="w-full">
                   <Link href="/#download" onClick={onClose}>
-                    Download on the App Store
+                    {t("home.cta.appStoreCta")}
                   </Link>
                 </Button>
+                <div className="mt-4 flex items-center justify-between gap-3">
+                  <span className="text-xs text-muted-foreground">{t("header.foundingChip")}</span>
+                  <LanguageSwitcher />
+                </div>
               </div>
             </div>
           </motion.div>

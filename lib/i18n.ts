@@ -1,0 +1,1298 @@
+export type Locale = "en" | "it" | "fr" | "es" | "pt";
+
+type Plan = {
+  id: string;
+  name: string;
+  price: string;
+  desc: string;
+  perks: string[];
+  chip?: string;
+  primaryCta: string;
+  secondaryCta?: string;
+};
+
+type HomeContent = {
+  hero: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    primaryCta: string;
+    secondaryCta: string;
+    foundingChip: string;
+    watchLabel: string;
+  };
+  whyClips: {
+    eyebrow: string;
+    title: string;
+    metric: string;
+    items: { title: string; desc: string }[];
+  };
+  comparison: {
+    title: string;
+    subtitle: string;
+    beforeTitle: string;
+    afterTitle: string;
+    beforeItems: string[];
+    afterItems: string[];
+  };
+  showcase: {
+    eyebrow: string;
+    title: string;
+    cards: { title: string; desc: string; alt: string }[];
+  };
+  clips: {
+    eyebrow: string;
+    title: string;
+    desc: string;
+    cards: { title: string; desc: string }[];
+  };
+  ai: {
+    leftTitle: string;
+    leftDesc: string;
+    promptOne: string;
+    aiReplyOne: string;
+    aiReplyTwo: string;
+    promptChips: string[];
+    rightTitle: string;
+    rightDesc: string;
+    cards: { title: string; genre: string; platform: string }[];
+    saveLabel: string;
+    watchOnLabel: string;
+  };
+  how: {
+    eyebrow: string;
+    title: string;
+    steps: { num: string; title: string; desc: string }[];
+  };
+  faq: {
+    title: string;
+    subtitle: string;
+    items: { q: string; a: string }[];
+  };
+  lovedBy: {
+    eyebrow: string;
+    quote: string;
+    rating: string;
+  };
+  cta: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    plans: Plan[];
+    appStoreCta: string;
+    tryPromptsCta: string;
+    legalIntro: string;
+    legalLinks: { terms: string; privacy: string; eula: string };
+  };
+  support: {
+    eyebrow: string;
+    title: string;
+    desc: string;
+    cards: {
+      title: string;
+      desc?: string;
+      list?: string[];
+    }[];
+  };
+};
+
+type Translation = {
+  languageNames: Record<Locale, string>;
+  languagesFlag: Record<Locale, string>;
+  header: {
+    nav: {
+      home: string;
+      features: string;
+      ai: string;
+      how: string;
+      support: string;
+      terms: string;
+      privacy: string;
+    };
+    download: string;
+    foundingChip: string;
+    mobileChip: string;
+  };
+  stickyCta: {
+    title: string;
+    subtitle: string;
+    cta: string;
+  };
+  footer: {
+    tagline: string;
+  };
+  home: HomeContent;
+};
+
+export const translations: Record<Locale, Translation> = {
+  en: {
+    languageNames: {
+      en: "English",
+      it: "Italiano",
+      fr: "Français",
+      es: "Español",
+      pt: "Português",
+    },
+    languagesFlag: {
+      en: "🇺🇸",
+      it: "🇮🇹",
+      fr: "🇫🇷",
+      es: "🇪🇸",
+      pt: "🇵🇹",
+    },
+    header: {
+      nav: {
+        home: "Home",
+        features: "Features",
+        ai: "Vibe AI",
+        how: "How it Works",
+        support: "Support",
+        terms: "Terms",
+        privacy: "Privacy",
+      },
+      download: "Download App",
+      foundingChip: "Founding Member $3.99/mo",
+      mobileChip: "Founding $3.99",
+    },
+    stickyCta: {
+      title: "Start discovering today",
+      subtitle: "15 free clips daily",
+      cta: "Download",
+    },
+    footer: {
+      tagline: "VibeWatch — Clip-first discovery for movies & TV. Crafted with the CineStream design language.",
+    },
+    home: {
+      hero: {
+        badge: "AI movie & TV picks, powered by clips",
+        title: "Watch a clip, get the right pick in seconds.",
+        subtitle:
+          "Swipe cinematic clips from trending films and series. Ask Vibe AI to match your vibe—go from scrolling to streaming in under 2 minutes.",
+        primaryCta: "Download free",
+        secondaryCta: "See how it works",
+        foundingChip: "Founding Member $3.99/mo — lock it in",
+        watchLabel: "See VibeWatch in action",
+      },
+      whyClips: {
+        eyebrow: "Why clips first?",
+        title: "Feel the vibe before you press play",
+        metric: "Avg. under 2 minutes to a solid pick",
+        items: [
+          { title: "Spoiler-safe clips", desc: "20–30 second scenes that show tone and pacing without revealing twists." },
+          { title: "Mood-matched AI", desc: "Describe your vibe—AI curates a tight set so you stop scrolling and start watching." },
+          { title: "Decision clarity", desc: "Streaming links, runtime, and social signals right where you need them." },
+        ],
+      },
+      comparison: {
+        title: "Stop endless scrolling. Start actually watching.",
+        subtitle: "Streaming apps make you hunt for hours. VibeWatch gets you queued up in seconds.",
+        beforeTitle: "Without VibeWatch",
+        afterTitle: "With VibeWatch",
+        beforeItems: [
+          "Scroll through Netflix for 30 minutes",
+          "Read dozens of generic descriptions",
+          "Watch boring trailers that spoil the plot",
+          "Still can't decide what to watch",
+          "End up rewatching The Office again",
+        ],
+        afterItems: [
+          "Open app → instant clips start playing",
+          "Swipe through 30-second scenes",
+          "Feel the vibe without spoilers",
+          "Ask AI: 'Need a mind-bending thriller'",
+          "Watching your new favorite in 2 minutes",
+        ],
+      },
+      showcase: {
+        eyebrow: "See it in action",
+        title: "Everything you need to discover your next watch",
+        cards: [
+          { title: "Instant clips", desc: "30-second scenes that give you the vibe fast. No spoilers, just energy.", alt: "Swipeable clip feed" },
+          { title: "Smart discovery", desc: "AI-powered feed learns your taste. Personalized clips from cult faves to trending hits.", alt: "Personalized feed based on your mood" },
+          { title: "Vibe AI assistant", desc: "Describe your mood in natural language. Get instant recs with preview clips.", alt: "Vibe AI chat interface" },
+          { title: "Smart lists", desc: "Save favorites, organize by mood, sync across all devices. Your perfect queue awaits.", alt: "Create custom watchlists" },
+          { title: "Full details", desc: "Ratings, cast, streaming platforms, and trailers so you know where to watch.", alt: "Detailed movie information" },
+          { title: "What's trending", desc: "See what everyone’s watching right now. Never miss the next big thing.", alt: "Search and trending movies" },
+        ],
+      },
+      clips: {
+        eyebrow: "Built for fans",
+        title: "Clips that make deciding what to watch effortless",
+        desc: "We prefetch a personalized mix of trending, acclaimed, and classic titles, score them against your vibe, and deliver a swipeable feed of clips so you feel a story before you commit to a full watch.",
+        cards: [
+          { title: "Lightning start", desc: "2 handpicked clips appear in seconds, so you're watching immediately—not waiting for previews or ads." },
+          { title: "Diverse feed", desc: "Movies + TV balanced with genre diversity and classics injected to keep your queue fresh." },
+          { title: "Engagement aware", desc: "Likes, watch time, and lists tune what you see next. Skip feels? Vibe AI adapts the feed live." },
+        ],
+      },
+      ai: {
+        leftTitle: "Ask Vibe AI to find your next watch",
+        leftDesc:
+          "Describe the vibe (\"cozy heists\", \"optimistic sci-fi\", \"series under 30 min\") and Vibe AI drops a tight list with instant clips. Save to lists or open where it’s streaming.",
+        promptOne: "Need a mind-bending mystery under 2 hours.",
+        aiReplyOne:
+          "I've got 3: Fracture (1h 53) with a tense courtroom twist, Coherence (1h 29) for sci-fi suspense, and The Invitation (1h 40) with slow-burn dread.",
+        aiReplyTwo: "Want trailers or quick clips from each?",
+        promptChips: ["Prompt: \"Feel-good sports series\"", "Prompt: \"Slow-burn thrillers tonight\""],
+        rightTitle: "Ready to watch on your time",
+        rightDesc:
+          "Save any clip to custom lists, see where it's streaming, and sync across devices. Free: 15 clips daily. Pro: Unlimited clips & AI starting at $3.99/mo (Founding Member rate - limited time!)",
+        cards: [
+          { title: "Neon Alley", genre: "Cyberpunk", platform: "Prime" },
+          { title: "Golden Hour", genre: "Feel-good", platform: "Netflix" },
+        ],
+        saveLabel: "Save",
+        watchOnLabel: "Watch on",
+      },
+      how: {
+        eyebrow: "How it works",
+        title: "Three steps to your next favorite",
+        steps: [
+          { num: "01", title: "Open Clips", desc: "Tap play and swipe a preloaded stack of today’s best scenes. Instant dopamine, zero decision fatigue." },
+          { num: "02", title: "Ask Vibe AI", desc: "Describe your vibe or limits. AI curates titles, serves clips, and adapts recs in real time." },
+          { num: "03", title: "Save & stream", desc: "Add favorites to lists, share with friends, and jump to where it’s streaming. Pro from $3.99/mo (Founding Member rate - limited time!)." },
+        ],
+      },
+      faq: {
+        title: "Frequently Asked Questions",
+        subtitle: "Everything you need to know about VibeWatch",
+        items: [
+          {
+            q: "Is VibeWatch really free?",
+            a: "Yes! Free users get 15 clips daily and basic Vibe AI recommendations. Upgrade to Founding Member Pro ($3.99/mo or $34.99/year) or Standard Pro ($8.99/mo or $69.99/year) for unlimited clips, advanced AI, and ad-free experience.",
+          },
+          {
+            q: "Do I need subscriptions to watch?",
+            a: "VibeWatch shows you clips and tells you where to stream. You'll need subscriptions to Netflix, Prime, etc. to watch full content, but discovery is free.",
+          },
+          {
+            q: "How does Vibe AI work?",
+            a: "Vibe AI learns from your interactions—likes, skips, watch time—and matches your mood to our database of titles. Describe what you want in natural language and get instant results.",
+          },
+          {
+            q: "Are the clips spoiler-free?",
+            a: "Absolutely. We carefully select 20-30 second scenes that capture the vibe without revealing plot twists or endings.",
+          },
+          {
+            q: "Can I use it on multiple devices?",
+            a: "Yes! Your lists, preferences, and watch history sync across iPhone, iPad, and all devices where you're signed in.",
+          },
+          {
+            q: "What's included in Pro?",
+            a: "Pro unlocks unlimited daily clips, unlimited AI requests, priority support, early access to new features, and an ad-free experience. Founding Member: $3.99/mo or $34.99/year. Standard: $8.99/mo or $69.99/year.",
+          },
+          {
+            q: "What's the Founding Member plan?",
+            a: "Founding Members get lifetime access to Pro features at launch pricing—$3.99/mo or $34.99/year—locked in forever, even when prices increase to standard rates. Available for the first month after launch (mid-Dec to mid-Jan). Lock in your rate now!",
+          },
+        ],
+      },
+      lovedBy: {
+        eyebrow: "Loved by streamers",
+        quote: "“VibeWatch gets me watching in minutes, not scrolling for hours.”",
+        rating: "Rated 4.8/5 by early members",
+      },
+      cta: {
+        eyebrow: "Get VibeWatch",
+        title: "Turn scrolling into your next watch night.",
+        subtitle:
+          "Download now to browse 15 free clips a day, unlock Vibe AI, and find what fits your vibe. Your lists stay in sync—everywhere you watch.",
+        plans: [
+          {
+            id: "free",
+            name: "Free",
+            price: "$0",
+            desc: "15 clips daily + basic Vibe AI",
+            perks: ["Sync lists across devices", "Spoiler-safe clips", "Where to watch links"],
+            primaryCta: "Start free",
+          },
+          {
+            id: "founding",
+            name: "Founding Member",
+            price: "$3.99/mo",
+            desc: "Unlimited clips + AI with locked rate",
+            perks: ["Unlimited AI prompts", "Ad-free discovery", "Early features & priority support"],
+            chip: "Lock your rate",
+            primaryCta: "Lock Founding Member rate",
+          },
+        ],
+        appStoreCta: "Download on the App Store",
+        tryPromptsCta: "Try Vibe AI prompts",
+        legalIntro: "VibeWatch Pro subscription information:",
+        legalLinks: {
+          terms: "Terms of Use & Subscription Details",
+          privacy: "Privacy Policy",
+          eula: "Apple EULA",
+        },
+      },
+      support: {
+        eyebrow: "Support",
+        title: "Need help with VibeWatch?",
+        desc: "We're here if you run into an issue, have a billing question, or want to share feedback about the clip feed or Vibe AI.",
+        cards: [
+          {
+            title: "Contact support",
+            desc: "Email us at startingvibe2025@gmail.com. Include your device, app version, and a short description so we can help fast.",
+          },
+          {
+            title: "What we can help with",
+            list: [
+              "Account access, sign-in, or verification problems",
+              "Billing and subscriptions (RevenueCat / App Store)",
+              "Reporting bugs, broken clips, or content concerns",
+              "Data export or deletion requests",
+            ],
+          },
+          {
+            title: "Response time",
+            desc: "We usually reply within one business day. Urgent playback or paywall issues are prioritized.",
+          },
+          {
+            title: "Legal & policies",
+            desc: "Review the details that keep your subscription and data transparent.",
+            list: [
+              "Terms of Use / EULA — subscription terms, billing, and renewal rules.",
+              "Privacy Policy — what we collect, why, and how to request deletion.",
+            ],
+          },
+        ],
+      },
+    },
+  },
+  it: {
+    languageNames: {
+      en: "English",
+      it: "Italiano",
+      fr: "Français",
+      es: "Español",
+      pt: "Português",
+    },
+    languagesFlag: {
+      en: "🇺🇸",
+      it: "🇮🇹",
+      fr: "🇫🇷",
+      es: "🇪🇸",
+      pt: "🇵🇹",
+    },
+    header: {
+      nav: {
+        home: "Home",
+        features: "Funzionalità",
+        ai: "Vibe AI",
+        how: "Come funziona",
+        support: "Supporto",
+        terms: "Termini",
+        privacy: "Privacy",
+      },
+      download: "Scarica l'app",
+      foundingChip: "Founding Member 3,99$/mese",
+      mobileChip: "Founding 3,99$",
+    },
+    stickyCta: {
+      title: "Inizia a scoprire oggi",
+      subtitle: "15 clip gratis al giorno",
+      cta: "Scarica",
+    },
+    footer: {
+      tagline: "VibeWatch — Scoperta tramite clip per film e TV. Creato con il linguaggio di design CineStream.",
+    },
+    home: {
+      hero: {
+        badge: "Consigli film & serie con AI, basati su clip",
+        title: "Guarda una clip, trova il titolo giusto in pochi secondi.",
+        subtitle:
+          "Scorri clip cinematografiche da film e serie di tendenza. Chiedi a Vibe AI di abbinare il tuo mood: dallo scroll allo streaming in meno di 2 minuti.",
+        primaryCta: "Scarica gratis",
+        secondaryCta: "Scopri come funziona",
+        foundingChip: "Founding Member 3,99$/mese — blocca ora",
+        watchLabel: "Guarda VibeWatch in azione",
+      },
+      whyClips: {
+        eyebrow: "Perché partire dalle clip?",
+        title: "Senti il mood prima di premere play",
+        metric: "In media meno di 2 minuti per scegliere",
+        items: [
+          { title: "Clip senza spoiler", desc: "Scene da 20–30 secondi che mostrano tono e ritmo senza svelare colpi di scena." },
+          { title: "AI che segue il tuo mood", desc: "Descrivi il tuo mood: l'AI cura una selezione corta così smetti di scrollare e inizi a guardare." },
+          { title: "Decisioni chiare", desc: "Link streaming, durata e segnali social proprio dove ti servono." },
+        ],
+      },
+      comparison: {
+        title: "Basta scroll infinito. Inizia davvero a guardare.",
+        subtitle: "Le app di streaming ti fanno cercare per ore. VibeWatch ti mette in play in pochi secondi.",
+        beforeTitle: "Senza VibeWatch",
+        afterTitle: "Con VibeWatch",
+        beforeItems: [
+          "30 minuti a scorrere Netflix",
+          "Decine di descrizioni generiche",
+          "Trailer noiosi che spoilerano",
+          "Ancora indeciso su cosa guardare",
+          "Finisci per rivedere The Office",
+        ],
+        afterItems: [
+          "Apri l'app → clip istantanee",
+          "Swipe tra scene da 30 secondi",
+          "Percepisci il mood senza spoiler",
+          "Chiedi all'AI: “Voglio un thriller mind‑bending”",
+          "Stai guardando qualcosa di nuovo in 2 minuti",
+        ],
+      },
+      showcase: {
+        eyebrow: "Guardala in azione",
+        title: "Tutto ciò che ti serve per scoprire cosa guardare",
+        cards: [
+          { title: "Clip istantanee", desc: "Scene da 30 secondi che danno il mood al volo. Zero spoiler, solo vibe.", alt: "Feed di clip da scorrere" },
+          { title: "Scoperta smart", desc: "Il feed AI impara i tuoi gusti. Clip personalizzate, dai cult ai trend.", alt: "Feed personalizzato in base al mood" },
+          { title: "Assistant Vibe AI", desc: "Descrivi il mood. Consigli immediati con clip di anteprima.", alt: "Interfaccia chat Vibe AI" },
+          { title: "Liste smart", desc: "Salva preferiti, organizza per mood, sincronizza su tutti i dispositivi.", alt: "Crea watchlist personalizzate" },
+          { title: "Dettagli completi", desc: "Valutazioni, cast, piattaforme e trailer per sapere dove guardare.", alt: "Informazioni dettagliate sul film" },
+          { title: "Cosa è di tendenza", desc: "Vedi cosa tutti stanno guardando ora. Non perdere il prossimo hype.", alt: "Ricerca e titoli di tendenza" },
+        ],
+      },
+      clips: {
+        eyebrow: "Pensato per i fan",
+        title: "Clip che rendono facile decidere cosa guardare",
+        desc: "Pre-carichiamo un mix personalizzato di titoli di tendenza, cult e classici, li valutiamo sul tuo mood e serviamo un feed di clip da sfiorare così senti la storia prima di iniziare.",
+        cards: [
+          { title: "Partenza lampo", desc: "2 clip selezionate compaiono in pochi secondi: stai già guardando, non aspettando spot o trailer." },
+          { title: "Feed vario", desc: "Film + serie bilanciati con generi diversi e classici per tenere fresca la tua lista." },
+          { title: "Adattivo all'engagement", desc: "Like, tempo di visione e liste regolano cosa vedi dopo. Salti? Vibe AI adatta il feed in tempo reale." },
+        ],
+      },
+      ai: {
+        leftTitle: "Chiedi a Vibe AI il prossimo titolo",
+        leftDesc:
+          "Descrivi il mood (\"heist cozy\", \"sci‑fi ottimista\", \"serie sotto i 30 min\") e Vibe AI restituisce una selezione breve con clip che puoi vedere subito. Salva nelle liste o apri sulla tua piattaforma.",
+        promptOne: "Serve un mistero mind-bending sotto le 2 ore.",
+        aiReplyOne:
+          "Ne ho 3: Fracture (1h 53) con un twist in tribunale, Coherence (1h 29) per suspense sci‑fi, e The Invitation (1h 40) per una tensione lenta.",
+        aiReplyTwo: "Vuoi trailer o clip rapide per ciascuno?",
+        promptChips: ['Prompt: "Serie sportive feel-good"', 'Prompt: "Thriller a combustione lenta stasera"'],
+        rightTitle: "Pronto a guardare quando vuoi",
+        rightDesc:
+          "Salva qualsiasi clip nelle liste, vedi dove è in streaming e sincronizza i dispositivi. Gratis: 15 clip al giorno. Pro: Clip e AI illimitati da 3,99$/mese (tariffa Founding Member - tempo limitato!)",
+        cards: [
+          { title: "Vicolo Neon", genre: "Cyberpunk", platform: "Prime" },
+          { title: "Golden Hour", genre: "Feel-good", platform: "Netflix" },
+        ],
+        saveLabel: "Salva",
+        watchOnLabel: "Guarda su",
+      },
+      how: {
+        eyebrow: "Come funziona",
+        title: "Tre passi per il tuo nuovo preferito",
+        steps: [
+          { num: "01", title: "Apri la tab Clips", desc: "Premi play e scorri una selezione pre-caricata delle migliori scene del giorno. Dopamina istantanea, zero indecisione." },
+          { num: "02", title: "Chiedi a Vibe AI", desc: "Descrivi mood o vincoli. L'AI cura i titoli, mostra clip e aggiorna le raccomandazioni in tempo reale." },
+          { num: "03", title: "Salva e guarda", desc: "Aggiungi ai preferiti, condividi e apri dove è in streaming. Passa a Pro da 3,99$/mese (tariffa Founding Member - tempo limitato!)." },
+        ],
+      },
+      faq: {
+        title: "Domande frequenti",
+        subtitle: "Tutto ciò che devi sapere su VibeWatch",
+        items: [
+          {
+            q: "VibeWatch è davvero gratis?",
+            a: "Sì! Gli utenti Free hanno 15 clip al giorno e Vibe AI base. Passa a Founding Member Pro (3,99$/mese o 34,99$/anno) o Standard Pro (8,99$/mese o 69,99$/anno) per clip e AI illimitati e nessuna pubblicità.",
+          },
+          {
+            q: "Servono abbonamenti per guardare?",
+            a: "VibeWatch ti mostra clip e dove guardare. Per il contenuto completo servono abbonamenti a Netflix, Prime, ecc., ma la scoperta è gratis.",
+          },
+          {
+            q: "Come funziona Vibe AI?",
+            a: "Vibe AI impara dalle tue interazioni—like, skip, tempo di visione—e abbina il tuo mood al nostro catalogo. Descrivi cosa vuoi in linguaggio naturale e ottieni risultati immediati.",
+          },
+          {
+            q: "Le clip sono senza spoiler?",
+            a: "Assolutamente. Selezioniamo scene da 20-30 secondi che catturano il vibe senza rivelare colpi di scena.",
+          },
+          {
+            q: "Posso usarla su più dispositivi?",
+            a: "Sì! Liste, preferenze e cronologia si sincronizzano su iPhone, iPad e tutti i dispositivi su cui accedi.",
+          },
+          {
+            q: "Cosa include Pro?",
+            a: "Pro sblocca clip giornaliere illimitate, richieste AI illimitate, supporto prioritario, accesso anticipato alle novità e nessuna pubblicità. Founding Member: 3,99$/mese o 34,99$/anno. Standard: 8,99$/mese o 69,99$/anno.",
+          },
+          {
+            q: "Cos'è il piano Founding Member?",
+            a: "I Founding Member ottengono accesso a vita alle funzioni Pro a prezzo di lancio—3,99$/mese o 34,99$/anno—bloccato per sempre anche se il prezzo aumenta. Disponibile nel primo mese dal lancio (metà dic - metà gen). Blocca subito la tariffa!",
+          },
+        ],
+      },
+      lovedBy: {
+        eyebrow: "Amato dagli streamer",
+        quote: "“VibeWatch mi fa iniziare in minuti, non dopo ore di scroll.”",
+        rating: "Valutato 4,8/5 dai primi membri",
+      },
+      cta: {
+        eyebrow: "Scarica VibeWatch",
+        title: "Trasforma lo scroll nella tua prossima serata cinema.",
+        subtitle:
+          "Scarica ora per 15 clip gratuite al giorno, sbloccare Vibe AI e trovare ciò che si adatta al tuo mood. Le tue liste restano sincronizzate ovunque guardi.",
+        plans: [
+          {
+            id: "free",
+            name: "Free",
+            price: "$0",
+            desc: "15 clip al giorno + Vibe AI base",
+            perks: ["Sincronizza liste tra dispositivi", "Clip senza spoiler", "Link su dove guardare"],
+            primaryCta: "Inizia gratis",
+          },
+          {
+            id: "founding",
+            name: "Founding Member",
+            price: "3,99$/mese",
+            desc: "Clip e AI illimitati con prezzo bloccato",
+            perks: ["Prompt AI illimitati", "Scoperta senza pubblicità", "Accesso anticipato e supporto prioritario"],
+            chip: "Blocca la tariffa",
+            primaryCta: "Blocca il prezzo Founding",
+          },
+        ],
+        appStoreCta: "Scarica su App Store",
+        tryPromptsCta: "Prova i prompt Vibe AI",
+        legalIntro: "Informazioni sull'abbonamento VibeWatch Pro:",
+        legalLinks: {
+          terms: "Termini d'uso e dettagli abbonamento",
+          privacy: "Privacy Policy",
+          eula: "EULA Apple",
+        },
+      },
+      support: {
+        eyebrow: "Supporto",
+        title: "Serve aiuto con VibeWatch?",
+        desc: "Siamo qui se incontri problemi, hai domande di fatturazione o vuoi inviare feedback sul feed di clip o Vibe AI.",
+        cards: [
+          {
+            title: "Contatta il supporto",
+            desc: "Scrivici a startingvibe2025@gmail.com. Inserisci dispositivo, versione app e una breve descrizione per aiutarti velocemente.",
+          },
+          {
+            title: "Possiamo aiutare con",
+            list: [
+              "Accesso account, login o verifica",
+              "Fatturazione e abbonamenti (RevenueCat / App Store)",
+              "Segnalazione bug, clip difettose o contenuti",
+              "Richieste di esportazione o cancellazione dati",
+            ],
+          },
+          {
+            title: "Tempi di risposta",
+            desc: "Di solito rispondiamo entro un giorno lavorativo. I problemi urgenti di riproduzione o paywall sono prioritari.",
+          },
+          {
+            title: "Legale e policy",
+            desc: "Rivedi i dettagli che tengono trasparenti abbonamento e dati.",
+            list: [
+              "Termini d'uso / EULA — termini di abbonamento, fatturazione e rinnovo.",
+              "Privacy Policy — cosa raccogliamo, perché e come richiedere la cancellazione.",
+            ],
+          },
+        ],
+      },
+    },
+  },
+  fr: {
+    languageNames: {
+      en: "English",
+      it: "Italiano",
+      fr: "Français",
+      es: "Español",
+      pt: "Português",
+    },
+    languagesFlag: {
+      en: "🇺🇸",
+      it: "🇮🇹",
+      fr: "🇫🇷",
+      es: "🇪🇸",
+      pt: "🇵🇹",
+    },
+    header: {
+      nav: {
+        home: "Accueil",
+        features: "Fonctionnalités",
+        ai: "Vibe AI",
+        how: "Comment ça marche",
+        support: "Support",
+        terms: "Conditions",
+        privacy: "Confidentialité",
+      },
+      download: "Télécharger l'app",
+      foundingChip: "Founding Member 3,99$/mois",
+      mobileChip: "Founding 3,99$",
+    },
+    stickyCta: {
+      title: "Commence à découvrir dès aujourd'hui",
+      subtitle: "15 clips gratuits par jour",
+      cta: "Télécharger",
+    },
+    footer: {
+      tagline: "VibeWatch — Découverte par clips pour films et séries. Conçu avec le langage design CineStream.",
+    },
+    home: {
+      hero: {
+        badge: "Reco films & séries par IA, via des clips",
+        title: "Regarde un clip, trouve le bon titre en secondes.",
+        subtitle:
+          "Fais défiler des clips ciné de films et séries tendance. Demande à Vibe AI selon ton mood — du scroll au streaming en moins de 2 minutes.",
+        primaryCta: "Télécharger gratuitement",
+        secondaryCta: "Voir comment ça marche",
+        foundingChip: "Founding Member 3,99$/mois — bloque le prix",
+        watchLabel: "Découvre VibeWatch en action",
+      },
+      whyClips: {
+        eyebrow: "Pourquoi commencer par des clips ?",
+        title: "Ressens l'ambiance avant de lancer",
+        metric: "Moins de 2 minutes en moyenne pour choisir",
+        items: [
+          { title: "Clips sans spoilers", desc: "Scènes de 20–30 secondes qui montrent le ton et le rythme sans révéler l'intrigue." },
+          { title: "IA adaptée à ton mood", desc: "Décris ton mood : l'IA compose une sélection courte pour arrêter le scroll et commencer à regarder." },
+          { title: "Choix éclairés", desc: "Liens streaming, durée et signaux sociaux exactement où tu en as besoin." },
+        ],
+      },
+      comparison: {
+        title: "Finis le scroll infini. Commence vraiment à regarder.",
+        subtitle: "Les apps de streaming te font chercher des heures. VibeWatch te lance en quelques secondes.",
+        beforeTitle: "Sans VibeWatch",
+        afterTitle: "Avec VibeWatch",
+        beforeItems: [
+          "30 minutes à faire défiler Netflix",
+          "Des dizaines de descriptions génériques",
+          "Bandes-annonces ennuyeuses qui spoilent",
+          "Toujours indécis sur quoi regarder",
+          "Tu finis par revoir The Office",
+        ],
+        afterItems: [
+          "Ouvre l'app → clips instantanés",
+          "Swipe dans des scènes de 30 secondes",
+          "Ressens l'ambiance sans spoilers",
+          'Demande à l\'IA : "Un thriller mind-bending"',
+          "En train de regarder un nouveau titre en 2 minutes",
+        ],
+      },
+      showcase: {
+        eyebrow: "Voir en action",
+        title: "Tout pour trouver ton prochain film ou série",
+        cards: [
+          { title: "Clips instantanés", desc: "Scènes de 30 secondes qui capturent l'essentiel. Pas de spoiler, juste le vibe.", alt: "Flux de clips à faire défiler" },
+          { title: "Découverte intelligente", desc: "Le feed IA apprend tes goûts. Clips personnalisés des classiques aux tendances.", alt: "Flux personnalisé selon ton mood" },
+          { title: "Assistant Vibe AI", desc: "Décris ton mood. Recommandations instantanées avec clips d'aperçu.", alt: "Interface de chat Vibe AI" },
+          { title: "Listes intelligentes", desc: "Sauvegarde, organise par mood, synchronise sur tous tes appareils.", alt: "Créer des listes de lecture" },
+          { title: "Détails complets", desc: "Notes, casting, plateformes, bandes-annonces. Tout pour décider.", alt: "Informations détaillées du film" },
+          { title: "Tendances", desc: "Ce que tout le monde regarde maintenant. Ne rate pas le prochain hit.", alt: "Recherche et titres tendances" },
+        ],
+      },
+      clips: {
+        eyebrow: "Pour les fans",
+        title: "Des clips qui facilitent le choix",
+        desc: "Nous préchargeons un mix personnalisé de titres tendance, cultes et classiques, nous les scorons selon ton mood et livrons un flux de clips à swiper pour sentir l'histoire avant de t'engager.",
+        cards: [
+          { title: "Démarrage éclair", desc: "2 clips triés apparaissent en quelques secondes : tu regardes déjà, sans attendre pubs ou trailers." },
+          { title: "Flux varié", desc: "Films + séries équilibrés avec diversité de genres et classiques pour rafraîchir ta liste." },
+          { title: "Adapté à l'engagement", desc: "Likes, temps de visionnage et listes ajustent ce que tu vois ensuite. Tu skips ? Vibe AI adapte le flux en direct." },
+        ],
+      },
+      ai: {
+        leftTitle: "Demande à Vibe AI ton prochain titre",
+        leftDesc:
+          'Décris le mood ("casse cozy", "sci‑fi optimiste", "série < 30 min") et Vibe AI renvoie une sélection serrée avec clips immédiats. Enregistre ou ouvre sur ta plateforme.',
+        promptOne: "Besoin d'un mystère mind-bending sous 2 heures.",
+        aiReplyOne:
+          "J'en ai 3 : Fracture (1h53) avec un twist au tribunal, Coherence (1h29) pour du suspense sci‑fi, et The Invitation (1h40) pour une tension lente.",
+        aiReplyTwo: "Tu veux des bandes-annonces ou des clips rapides ?",
+        promptChips: ['Prompt : "Séries sport feel-good"', 'Prompt : "Thrillers à combustion lente ce soir"'],
+        rightTitle: "Prêt à regarder à ton rythme",
+        rightDesc:
+          "Sauvegarde n'importe quelle clip, vois où c'est disponible, synchronise tes appareils. Gratuit : 15 clips/jour. Pro : Clips et IA illimités dès 3,99$/mois (tarif Founding Member - temps limité !)",
+        cards: [
+          { title: "Ruelle Néon", genre: "Cyberpunk", platform: "Prime" },
+          { title: "Golden Hour", genre: "Feel-good", platform: "Netflix" },
+        ],
+        saveLabel: "Enregistrer",
+        watchOnLabel: "Regarder sur",
+      },
+      how: {
+        eyebrow: "Comment ça marche",
+        title: "Trois étapes vers ton prochain favori",
+        steps: [
+          { num: "01", title: "Ouvre l'onglet Clips", desc: "Appuie sur play et swipe une pile préchargée des meilleures scènes du jour. Dopamine instantanée, zéro hésitation." },
+          { num: "02", title: "Demande à Vibe AI", desc: "Décris mood ou contraintes. L'IA sélectionne les titres, diffuse des clips et ajuste les reco en temps réel." },
+          { num: "03", title: "Sauvegarde et regarde", desc: "Ajoute aux listes, partage, ouvre où c'est en streaming. Passe en Pro dès 3,99$/mois (tarif Founding Member - temps limité !)." },
+        ],
+      },
+      faq: {
+        title: "FAQ",
+        subtitle: "Tout ce qu'il faut savoir sur VibeWatch",
+        items: [
+          {
+            q: "VibeWatch est vraiment gratuit ?",
+            a: "Oui ! Les utilisateurs Free ont 15 clips/jour et Vibe AI basique. Passe en Founding Member Pro (3,99$/mois ou 34,99$/an) ou Standard Pro (8,99$/mois ou 69,99$/an) pour clips illimités, IA avancée et sans pub.",
+          },
+          {
+            q: "Faut-il des abonnements pour regarder ?",
+            a: "VibeWatch montre des clips et où regarder. Il faut des abonnements Netflix, Prime, etc. pour le contenu complet, mais la découverte est gratuite.",
+          },
+          {
+            q: "Comment fonctionne Vibe AI ?",
+            a: "Vibe AI apprend de tes interactions—likes, skips, temps de visionnage—et aligne ton mood sur notre base de titres. Décris ce que tu veux en langage naturel et obtiens des résultats immédiats.",
+          },
+          {
+            q: "Les clips sont-ils sans spoiler ?",
+            a: "Absolument. Nous sélectionnons des scènes de 20-30 secondes qui capturent le vibe sans révéler la fin.",
+          },
+          {
+            q: "Puis-je l'utiliser sur plusieurs appareils ?",
+            a: "Oui ! Tes listes, préférences et historique se synchronisent sur iPhone, iPad et tous les appareils connectés.",
+          },
+          {
+            q: "Que comprend Pro ?",
+            a: "Pro débloque clips illimités, requêtes IA illimitées, support prioritaire, accès anticipé aux nouveautés et expérience sans pub. Founding Member : 3,99$/mois ou 34,99$/an. Standard : 8,99$/mois ou 69,99$/an.",
+          },
+          {
+            q: "Qu'est-ce que le plan Founding Member ?",
+            a: "Les Founding Members gardent l'accès à vie aux fonctionnalités Pro au tarif de lancement—3,99$/mois ou 34,99$/an—bloqué à vie même si le prix augmente. Disponible le premier mois après lancement (mi-déc à mi-janv). Bloque ton tarif maintenant !",
+          },
+        ],
+      },
+      lovedBy: {
+        eyebrow: "Adoré des streamers",
+        quote: "“VibeWatch me lance en minutes, pas après des heures de scroll.”",
+        rating: "Note de 4,8/5 par les premiers membres",
+      },
+      cta: {
+        eyebrow: "Télécharge VibeWatch",
+        title: "Transforme le scroll en soirée visionnage.",
+        subtitle:
+          "Télécharge maintenant pour 15 clips gratuits/jour, débloquer Vibe AI et trouver ce qui correspond à ton mood. Tes listes restent synchronisées partout.",
+        plans: [
+          {
+            id: "free",
+            name: "Free",
+            price: "$0",
+            desc: "15 clips par jour + Vibe AI basique",
+            perks: ["Synchronisation des listes", "Clips sans spoiler", "Liens vers les plateformes"],
+            primaryCta: "Commencer gratuitement",
+          },
+          {
+            id: "founding",
+            name: "Founding Member",
+            price: "3,99$/mois",
+            desc: "Clips et IA illimités à tarif bloqué",
+            perks: ["Prompts IA illimités", "Découverte sans pub", "Accès anticipé et support prioritaire"],
+            chip: "Bloque ton tarif",
+            primaryCta: "Bloquer le tarif Founding",
+          },
+        ],
+        appStoreCta: "Télécharger sur l'App Store",
+        tryPromptsCta: "Essayer les prompts Vibe AI",
+        legalIntro: "Infos sur l'abonnement VibeWatch Pro :",
+        legalLinks: {
+          terms: "Conditions d'utilisation et abonnement",
+          privacy: "Politique de confidentialité",
+          eula: "EULA Apple",
+        },
+      },
+      support: {
+        eyebrow: "Support",
+        title: "Besoin d'aide avec VibeWatch ?",
+        desc: "Nous sommes là si tu rencontres un problème, une question de facturation ou des retours sur le feed ou Vibe AI.",
+        cards: [
+          {
+            title: "Contacter le support",
+            desc: "Écris-nous à startingvibe2025@gmail.com. Indique appareil, version de l'app et une courte description pour une aide rapide.",
+          },
+          {
+            title: "Ce que nous couvrons",
+            list: [
+              "Accès compte, connexion ou vérification",
+              "Facturation et abonnements (RevenueCat / App Store)",
+              "Signalement de bugs, clips cassés ou soucis de contenu",
+              "Demandes d'export ou suppression de données",
+            ],
+          },
+          {
+            title: "Délai de réponse",
+            desc: "Nous répondons généralement sous un jour ouvré. Les soucis urgents de lecture ou paywall sont prioritaires.",
+          },
+          {
+            title: "Légal & politiques",
+            desc: "Consulte les détails qui gardent ton abonnement et tes données transparents.",
+            list: [
+              "Conditions d'utilisation / EULA — conditions d'abonnement, facturation, renouvellement.",
+              "Politique de confidentialité — ce que nous collectons, pourquoi, et comment demander la suppression.",
+            ],
+          },
+        ],
+      },
+    },
+  },
+  es: {
+    languageNames: {
+      en: "English",
+      it: "Italiano",
+      fr: "Français",
+      es: "Español",
+      pt: "Português",
+    },
+    languagesFlag: {
+      en: "🇺🇸",
+      it: "🇮🇹",
+      fr: "🇫🇷",
+      es: "🇪🇸",
+      pt: "🇵🇹",
+    },
+    header: {
+      nav: {
+        home: "Inicio",
+        features: "Funciones",
+        ai: "Vibe AI",
+        how: "Cómo funciona",
+        support: "Soporte",
+        terms: "Términos",
+        privacy: "Privacidad",
+      },
+      download: "Descargar app",
+      foundingChip: "Founding Member 3,99$/mes",
+      mobileChip: "Founding 3,99$",
+    },
+    stickyCta: {
+      title: "Empieza a descubrir hoy",
+      subtitle: "15 clips gratis al día",
+      cta: "Descargar",
+    },
+    footer: {
+      tagline: "VibeWatch — Descubrimiento con clips para cine y TV. Creado con el lenguaje de diseño CineStream.",
+    },
+    home: {
+      hero: {
+        badge: "Recomendaciones de cine y TV por IA, vía clips",
+        title: "Mira un clip, consigue el título correcto en segundos.",
+        subtitle:
+          "Desplázate por clips de películas y series en tendencia. Pídele a Vibe AI que combine tu mood: del scroll al streaming en menos de 2 minutos.",
+        primaryCta: "Descargar gratis",
+        secondaryCta: "Ver cómo funciona",
+        foundingChip: "Founding Member 3,99$/mes — bloquea el precio",
+        watchLabel: "Mira VibeWatch en acción",
+      },
+      whyClips: {
+        eyebrow: "¿Por qué empezar con clips?",
+        title: "Siente el vibe antes de darle play",
+        metric: "Menos de 2 minutos de media para elegir",
+        items: [
+          { title: "Clips sin spoilers", desc: "Escenas de 20–30 segundos que muestran tono y ritmo sin revelar giros." },
+          { title: "IA según tu mood", desc: "Describe tu mood: la IA arma una selección corta para dejar el scroll y empezar a ver." },
+          { title: "Decisiones claras", desc: "Enlaces de streaming, duración y señales sociales justo donde los necesitas." },
+        ],
+      },
+      comparison: {
+        title: "Basta de scroll infinito. Empieza a ver.",
+        subtitle: "El streaming tradicional te hace buscar horas. VibeWatch te pone a ver en segundos.",
+        beforeTitle: "Sin VibeWatch",
+        afterTitle: "Con VibeWatch",
+        beforeItems: [
+          "30 minutos desplazándote en Netflix",
+          "Decenas de descripciones genéricas",
+          "Tráilers aburridos que hacen spoiler",
+          "Aún sin decidir qué ver",
+          "Terminas viendo The Office otra vez",
+        ],
+        afterItems: [
+          "Abre la app → clips al instante",
+          "Desliza por escenas de 30 segundos",
+          "Siente el vibe sin spoilers",
+          'Pide a la IA: "Quiero un thriller mind-bending"',
+          "Viendo algo nuevo en 2 minutos",
+        ],
+      },
+      showcase: {
+        eyebrow: "Ver en acción",
+        title: "Todo lo que necesitas para tu siguiente maratón",
+        cards: [
+          { title: "Clips instantáneos", desc: "Escenas de 30 segundos que capturan la esencia. Sin spoilers, solo vibe.", alt: "Feed de clips deslizable" },
+          { title: "Descubrimiento smart", desc: "El feed con IA aprende tus gustos. Clips personalizados, de clásicos a tendencias.", alt: "Feed personalizado según tu mood" },
+          { title: "Asistente Vibe AI", desc: "Describe tu mood. Recibe recomendaciones al instante con clips previos.", alt: "Interfaz de chat Vibe AI" },
+          { title: "Listas inteligentes", desc: "Guarda favoritos, organiza por mood, sincroniza en todos tus dispositivos.", alt: "Crear listas personalizadas" },
+          { title: "Detalles completos", desc: "Valoraciones, reparto, plataformas, tráilers. Todo para decidir.", alt: "Información detallada de la película" },
+          { title: "Tendencias", desc: "Lo que todos ven ahora. No te pierdas el próximo éxito.", alt: "Búsqueda y títulos en tendencia" },
+        ],
+      },
+      clips: {
+        eyebrow: "Hecho para fans",
+        title: "Clips que facilitan decidir qué ver",
+        desc: "Precargamos una mezcla personalizada de títulos en tendencia, aclamados y clásicos, los puntuamos según tu mood y entregamos un feed de clips deslizable para que sientas la historia antes de verla.",
+        cards: [
+          { title: "Inicio veloz", desc: "2 clips seleccionados aparecen en segundos: ya estás viendo, sin esperar anuncios ni tráilers." },
+          { title: "Feed diverso", desc: "Películas + series equilibradas con variedad de géneros y clásicos para refrescar tu lista." },
+          { title: "Según tu engagement", desc: "Likes, tiempo de visualización y listas ajustan lo que sigue. ¿Saltas? Vibe AI adapta el feed al momento." },
+        ],
+      },
+      ai: {
+        leftTitle: "Pide a Vibe AI tu próximo título",
+        leftDesc:
+          'Describe el mood ("atracos cozy", "sci‑fi optimista", "series < 30 min") y Vibe AI devuelve una selección breve con clips al instante. Guarda en listas o abre en tu plataforma.',
+        promptOne: "Busco un misterio mind-bending de menos de 2 horas.",
+        aiReplyOne:
+          "Tengo 3: Fracture (1h53) con giro judicial, Coherence (1h29) para suspenso sci‑fi, y The Invitation (1h40) para tensión lenta.",
+        aiReplyTwo: "¿Quieres tráilers o clips rápidos de cada una?",
+        promptChips: ['Prompt: "Series deportivas feel-good"', 'Prompt: "Thrillers de cocción lenta esta noche"'],
+        rightTitle: "Listo para ver cuando quieras",
+        rightDesc:
+          "Guarda cualquier clip en listas, mira dónde se transmite y sincroniza tus dispositivos. Gratis: 15 clips diarios. Pro: Clips e IA ilimitados desde 3,99$/mes (tarifa Founding Member - tiempo limitado).",
+        cards: [
+          { title: "Callejón Neón", genre: "Cyberpunk", platform: "Prime" },
+          { title: "Golden Hour", genre: "Feel-good", platform: "Netflix" },
+        ],
+        saveLabel: "Guardar",
+        watchOnLabel: "Ver en",
+      },
+      how: {
+        eyebrow: "Cómo funciona",
+        title: "Tres pasos a tu próximo favorito",
+        steps: [
+          { num: "01", title: "Abre la pestaña Clips", desc: "Pulsa play y desliza una pila precargada con las mejores escenas del día. Dopamina al instante, cero dudas." },
+          { num: "02", title: "Pide a Vibe AI", desc: "Describe mood o restricciones. La IA cura títulos, muestra clips y ajusta las recomendaciones en tiempo real." },
+          { num: "03", title: "Guarda y ve", desc: "Añade favoritos, comparte, abre donde se transmite. Pasa a Pro desde 3,99$/mes (tarifa Founding Member - tiempo limitado)." },
+        ],
+      },
+      faq: {
+        title: "Preguntas frecuentes",
+        subtitle: "Todo lo que debes saber de VibeWatch",
+        items: [
+          {
+            q: "¿VibeWatch es realmente gratis?",
+            a: "¡Sí! Los usuarios Free tienen 15 clips diarios y Vibe AI básico. Pasa a Founding Member Pro (3,99$/mes o 34,99$/año) o Standard Pro (8,99$/mes o 69,99$/año) para clips y IA ilimitados sin anuncios.",
+          },
+          {
+            q: "¿Necesito suscripciones para ver?",
+            a: "VibeWatch te muestra clips y dónde ver. Para el contenido completo necesitas suscripciones a Netflix, Prime, etc., pero la parte de descubrimiento es gratis.",
+          },
+          {
+            q: "¿Cómo funciona Vibe AI?",
+            a: "Vibe AI aprende de tus interacciones—likes, skips, tiempo de visualización—y ajusta tu mood a nuestra base de títulos. Describe lo que quieres en lenguaje natural y obtén resultados al instante.",
+          },
+          {
+            q: "¿Los clips tienen spoilers?",
+            a: "Para nada. Seleccionamos escenas de 20-30 segundos que muestran el vibe sin revelar giros.",
+          },
+          {
+            q: "¿Puedo usarla en varios dispositivos?",
+            a: "Sí. Tus listas, preferencias e historial se sincronizan en iPhone, iPad y todos tus dispositivos conectados.",
+          },
+          {
+            q: "¿Qué incluye Pro?",
+            a: "Pro desbloquea clips diarios ilimitados, peticiones IA ilimitadas, soporte prioritario, acceso temprano a nuevas funciones y experiencia sin anuncios. Founding Member: 3,99$/mes o 34,99$/año. Standard: 8,99$/mes o 69,99$/año.",
+          },
+          {
+            q: "¿Qué es el plan Founding Member?",
+            a: "Los Founding Members obtienen acceso de por vida a funciones Pro al precio de lanzamiento—3,99$/mes o 34,99$/año—bloqueado para siempre incluso si sube. Disponible el primer mes tras el lanzamiento (mediados de dic. a mediados de ene.). ¡Bloquea tu tarifa!",
+          },
+        ],
+      },
+      lovedBy: {
+        eyebrow: "Amado por los streamers",
+        quote: "“VibeWatch me hace ver en minutos, no después de horas de scroll.”",
+        rating: "Calificación 4.8/5 de los primeros miembros",
+      },
+      cta: {
+        eyebrow: "Descarga VibeWatch",
+        title: "Convierte el scroll en tu próxima noche de cine.",
+        subtitle:
+          "Descarga ahora para 15 clips gratis al día, desbloquear Vibe AI y encontrar lo que encaja con tu mood. Tus listas siguen sincronizadas donde veas.",
+        plans: [
+          {
+            id: "free",
+            name: "Free",
+            price: "$0",
+            desc: "15 clips al día + Vibe AI básico",
+            perks: ["Sincroniza listas en dispositivos", "Clips sin spoilers", "Enlaces de dónde ver"],
+            primaryCta: "Empezar gratis",
+          },
+          {
+            id: "founding",
+            name: "Founding Member",
+            price: "3,99$/mes",
+            desc: "Clips e IA ilimitados con precio bloqueado",
+            perks: ["Prompts IA ilimitados", "Descubrimiento sin anuncios", "Acceso temprano y soporte prioritario"],
+            chip: "Bloquea tu tarifa",
+            primaryCta: "Bloquear precio Founding",
+          },
+        ],
+        appStoreCta: "Descargar en App Store",
+        tryPromptsCta: "Probar prompts de Vibe AI",
+        legalIntro: "Información de suscripción VibeWatch Pro:",
+        legalLinks: {
+          terms: "Términos de uso y suscripción",
+          privacy: "Política de privacidad",
+          eula: "EULA de Apple",
+        },
+      },
+      support: {
+        eyebrow: "Soporte",
+        title: "¿Necesitas ayuda con VibeWatch?",
+        desc: "Estamos aquí si tienes un problema, una pregunta de facturación o feedback sobre el feed de clips o Vibe AI.",
+        cards: [
+          {
+            title: "Contactar soporte",
+            desc: "Escríbenos a startingvibe2025@gmail.com. Incluye dispositivo, versión de la app y una breve descripción para ayudarte rápido.",
+          },
+          {
+            title: "Podemos ayudar con",
+            list: [
+              "Acceso a la cuenta, inicio de sesión o verificación",
+              "Facturación y suscripciones (RevenueCat / App Store)",
+              "Reportar bugs, clips rotos o contenido",
+              "Solicitudes de exportación o borrado de datos",
+            ],
+          },
+          {
+            title: "Tiempo de respuesta",
+            desc: "Normalmente respondemos en un día laboral. Problemas urgentes de reproducción o paywall son prioridad.",
+          },
+          {
+            title: "Legal y políticas",
+            desc: "Revisa los detalles que mantienen transparente tu suscripción y datos.",
+            list: [
+              "Términos de uso / EULA — términos de suscripción, facturación y renovación.",
+              "Política de privacidad — qué recopilamos, por qué y cómo pedir eliminación.",
+            ],
+          },
+        ],
+      },
+    },
+  },
+  pt: {
+    languageNames: {
+      en: "English",
+      it: "Italiano",
+      fr: "Français",
+      es: "Español",
+      pt: "Português",
+    },
+    languagesFlag: {
+      en: "🇺🇸",
+      it: "🇮🇹",
+      fr: "🇫🇷",
+      es: "🇪🇸",
+      pt: "🇵🇹",
+    },
+    header: {
+      nav: {
+        home: "Início",
+        features: "Recursos",
+        ai: "Vibe AI",
+        how: "Como funciona",
+        support: "Suporte",
+        terms: "Termos",
+        privacy: "Privacidade",
+      },
+      download: "Baixar app",
+      foundingChip: "Founding Member US$3,99/mês",
+      mobileChip: "Founding 3,99$",
+    },
+    stickyCta: {
+      title: "Comece a descobrir hoje",
+      subtitle: "15 clipes grátis por dia",
+      cta: "Baixar",
+    },
+    footer: {
+      tagline: "VibeWatch — Descoberta via clipes para filmes e séries. Criado com a linguagem de design CineStream.",
+    },
+    home: {
+      hero: {
+        badge: "Recomendações de filmes e séries por IA, via clipes",
+        title: "Veja um clipe e ache o título certo em segundos.",
+        subtitle:
+          "Role por clipes de filmes e séries em alta. Peça ao Vibe AI para combinar com seu mood: do scroll ao streaming em menos de 2 minutos.",
+        primaryCta: "Baixar grátis",
+        secondaryCta: "Veja como funciona",
+        foundingChip: "Founding Member US$3,99/mês — bloqueie agora",
+        watchLabel: "Veja o VibeWatch em ação",
+      },
+      whyClips: {
+        eyebrow: "Por que começar com clipes?",
+        title: "Sinta o clima antes de dar play",
+        metric: "Menos de 2 minutos em média para escolher",
+        items: [
+          { title: "Clipes sem spoiler", desc: "Cenas de 20–30 segundos que mostram tom e ritmo sem revelar reviravoltas." },
+          { title: "IA que segue seu mood", desc: "Descreva seu mood: a IA monta uma seleção curta para parar o scroll e começar a assistir." },
+          { title: "Decisão clara", desc: "Links de streaming, duração e sinais sociais exatamente onde você precisa." },
+        ],
+      },
+      comparison: {
+        title: "Chega de scroll infinito. Comece a assistir.",
+        subtitle: "O streaming tradicional faz você procurar por horas. VibeWatch coloca você assistindo em segundos.",
+        beforeTitle: "Sem VibeWatch",
+        afterTitle: "Com VibeWatch",
+        beforeItems: [
+          "30 minutos rolando a Netflix",
+          "Dezenas de descrições genéricas",
+          "Trailers chatos que dão spoiler",
+          "Ainda sem decidir o que ver",
+          "Acaba reassistindo The Office",
+        ],
+        afterItems: [
+          "Abra o app → clipes instantâneos",
+          "Deslize por cenas de 30 segundos",
+          "Sinta o clima sem spoilers",
+          'Peça à IA: "Quero um thriller mind-bending"',
+          "Assistindo algo novo em 2 minutos",
+        ],
+      },
+      showcase: {
+        eyebrow: "Veja em ação",
+        title: "Tudo que você precisa para o próximo play",
+        cards: [
+          { title: "Clipes instantâneos", desc: "Cenas de 30 segundos que capturam a essência. Sem spoilers, só vibe.", alt: "Feed de clipes para deslizar" },
+          { title: "Descoberta inteligente", desc: "O feed com IA aprende seu gosto. Clipes personalizados de clássicos a tendências.", alt: "Feed personalizado conforme o humor" },
+          { title: "Assistente Vibe AI", desc: "Descreva seu humor. Receba recomendações instantâneas com clipes de prévia.", alt: "Interface de chat Vibe AI" },
+          { title: "Listas inteligentes", desc: "Salve favoritos, organize por mood, sincronize em todos os dispositivos.", alt: "Criar listas personalizadas" },
+          { title: "Detalhes completos", desc: "Notas, elenco, plataformas, trailers. Tudo para decidir.", alt: "Informações detalhadas do filme" },
+          { title: "Em alta", desc: "Veja o que todos assistem agora. Não perca o próximo hit.", alt: "Busca e títulos em alta" },
+        ],
+      },
+      clips: {
+        eyebrow: "Feito para fãs",
+        title: "Clipes que facilitam decidir o que assistir",
+        desc: "Pré-carregamos um mix personalizado de títulos em alta, aclamados e clássicos, pontuamos com seu mood e entregamos um feed de clipes para você sentir a história antes de começar.",
+        cards: [
+          { title: "Início relâmpago", desc: "2 clipes selecionados aparecem em segundos: você já está assistindo, sem esperar anúncios ou trailers." },
+          { title: "Feed diverso", desc: "Filmes + séries equilibrados com diversidade de gêneros e clássicos para manter a fila fresca." },
+          { title: "Ciente do engajamento", desc: "Likes, tempo de tela e listas ajustam o que vem depois. Pulou? Vibe AI adapta o feed ao vivo." },
+        ],
+      },
+      ai: {
+        leftTitle: "Peça ao Vibe AI o próximo título",
+        leftDesc:
+          'Descreva o mood ("assaltos aconchegantes", "sci‑fi otimista", "série < 30 min") e o Vibe AI retorna uma seleção curta com clipes imediatos. Salve em listas ou abra na sua plataforma.',
+        promptOne: "Quero um mistério mind-bending de menos de 2 horas.",
+        aiReplyOne:
+          "Tenho 3: Fracture (1h53) com um twist no tribunal, Coherence (1h29) para suspense sci‑fi, e The Invitation (1h40) para tensão lenta.",
+        aiReplyTwo: "Quer trailers ou clipes rápidos de cada um?",
+        promptChips: ['Prompt: "Séries esportivas feel-good"', 'Prompt: "Thrillers de ritmo lento hoje"'],
+        rightTitle: "Pronto para assistir na sua hora",
+        rightDesc:
+          "Salve qualquer clipe em listas, veja onde está disponível e sincronize dispositivos. Grátis: 15 clipes diários. Pro: Clipes e IA ilimitados a partir de US$3,99/mês (tarifa Founding Member - tempo limitado!).",
+        cards: [
+          { title: "Beco Neon", genre: "Cyberpunk", platform: "Prime" },
+          { title: "Golden Hour", genre: "Feel-good", platform: "Netflix" },
+        ],
+        saveLabel: "Salvar",
+        watchOnLabel: "Assistir em",
+      },
+      how: {
+        eyebrow: "Como funciona",
+        title: "Três passos para seu próximo favorito",
+        steps: [
+          { num: "01", title: "Abra a aba Clips", desc: "Dê play e deslize uma pilha pré-carregada das melhores cenas do dia. Dopamina instantânea, zero indecisão." },
+          { num: "02", title: "Peça ao Vibe AI", desc: "Descreva humor ou restrições. A IA seleciona títulos, mostra clipes e ajusta as recomendações em tempo real." },
+          { num: "03", title: "Salve e assista", desc: "Adicione aos favoritos, compartilhe e abra onde está em streaming. Vá para o Pro a partir de US$3,99/mês (tarifa Founding Member - tempo limitado!)." },
+        ],
+      },
+      faq: {
+        title: "Perguntas frequentes",
+        subtitle: "Tudo o que você precisa saber sobre o VibeWatch",
+        items: [
+          {
+            q: "VibeWatch é realmente grátis?",
+            a: "Sim! Usuários Free têm 15 clipes por dia e Vibe AI básico. Vá para Founding Member Pro (US$3,99/mês ou US$34,99/ano) ou Standard Pro (US$8,99/mês ou US$69,99/ano) para clipes e IA ilimitados sem anúncios.",
+          },
+          {
+            q: "Preciso de assinaturas para assistir?",
+            a: "VibeWatch mostra clipes e onde assistir. Para o conteúdo completo você precisa de assinaturas Netflix, Prime etc., mas a descoberta é grátis.",
+          },
+          {
+            q: "Como funciona o Vibe AI?",
+            a: "O Vibe AI aprende com suas interações—likes, skips, tempo de tela—e combina seu mood ao nosso catálogo. Descreva o que quer em linguagem natural e receba resultados imediatos.",
+          },
+          {
+            q: "Os clipes têm spoilers?",
+            a: "Não. Selecionamos cenas de 20-30 segundos que mostram o vibe sem revelar reviravoltas.",
+          },
+          {
+            q: "Posso usar em vários dispositivos?",
+            a: "Sim! Listas, preferências e histórico sincronizam no iPhone, iPad e em todos os dispositivos logados.",
+          },
+          {
+            q: "O que inclui o Pro?",
+            a: "Pro desbloqueia clipes diários ilimitados, pedidos de IA ilimitados, suporte prioritário, acesso antecipado a novidades e experiência sem anúncios. Founding Member: US$3,99/mês ou US$34,99/ano. Standard: US$8,99/mês ou US$69,99/ano.",
+          },
+          {
+            q: "O que é o plano Founding Member?",
+            a: "Founding Members têm acesso vitalício às funções Pro pelo preço de lançamento—US$3,99/mês ou US$34,99/ano—bloqueado para sempre, mesmo se subir. Disponível no primeiro mês pós-lançamento (meados de dez a meados de jan). Bloqueie agora!",
+          },
+        ],
+      },
+      lovedBy: {
+        eyebrow: "Amado por quem faz streaming",
+        quote: "“VibeWatch me coloca assistindo em minutos, não depois de horas de scroll.”",
+        rating: "Nota 4,8/5 pelos primeiros membros",
+      },
+      cta: {
+        eyebrow: "Baixe o VibeWatch",
+        title: "Transforme o scroll na próxima noite de filmes.",
+        subtitle:
+          "Baixe agora para 15 clipes grátis por dia, desbloquear o Vibe AI e achar o que combina com seu mood. Suas listas ficam sincronizadas em todos os lugares.",
+        plans: [
+          {
+            id: "free",
+            name: "Free",
+            price: "$0",
+            desc: "15 clipes por dia + Vibe AI básico",
+            perks: ["Sincronize listas entre dispositivos", "Clipes sem spoiler", "Links de onde assistir"],
+            primaryCta: "Começar grátis",
+          },
+          {
+            id: "founding",
+            name: "Founding Member",
+            price: "US$3,99/mês",
+            desc: "Clipes e IA ilimitados com preço bloqueado",
+            perks: ["Prompts de IA ilimitados", "Descoberta sem anúncios", "Acesso antecipado e suporte prioritário"],
+            chip: "Bloqueie o preço",
+            primaryCta: "Bloquear preço Founding",
+          },
+        ],
+        appStoreCta: "Baixar na App Store",
+        tryPromptsCta: "Testar prompts do Vibe AI",
+        legalIntro: "Informações da assinatura VibeWatch Pro:",
+        legalLinks: {
+          terms: "Termos de uso e assinatura",
+          privacy: "Política de privacidade",
+          eula: "EULA Apple",
+        },
+      },
+      support: {
+        eyebrow: "Suporte",
+        title: "Precisa de ajuda com o VibeWatch?",
+        desc: "Estamos aqui se você tiver problemas, dúvidas de cobrança ou feedback sobre o feed de clipes ou Vibe AI.",
+        cards: [
+          {
+            title: "Fale com o suporte",
+            desc: "Envie e-mail para startingvibe2025@gmail.com. Inclua dispositivo, versão do app e uma breve descrição para ajudarmos rápido.",
+          },
+          {
+            title: "Podemos ajudar em",
+            list: [
+              "Acesso à conta, login ou verificação",
+              "Cobrança e assinaturas (RevenueCat / App Store)",
+              "Reportar bugs, clipes quebrados ou conteúdo",
+              "Solicitações de exportação ou exclusão de dados",
+            ],
+          },
+          {
+            title: "Tempo de resposta",
+            desc: "Normalmente respondemos em um dia útil. Problemas urgentes de reprodução ou paywall têm prioridade.",
+          },
+          {
+            title: "Jurídico e políticas",
+            desc: "Revise os detalhes que mantêm sua assinatura e dados transparentes.",
+            list: [
+              "Termos de uso / EULA — termos de assinatura, cobrança e renovação.",
+              "Política de privacidade — o que coletamos, por quê e como pedir exclusão.",
+            ],
+          },
+        ],
+      },
+    },
+  },
+};

@@ -5,9 +5,11 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/components/language-provider";
 
 export function StickyCTA() {
   const [isVisible, setIsVisible] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,13 +35,13 @@ export function StickyCTA() {
             <div className="container mx-auto max-w-7xl px-4 py-3">
               <div className="flex items-center justify-between gap-3">
                 <div className="flex-1 min-w-0">
-                  <p className="font-semibold text-sm truncate">Start discovering today</p>
-                  <p className="text-xs text-muted-foreground truncate">15 free clips daily</p>
+                  <p className="font-semibold text-sm truncate">{t("stickyCta.title")}</p>
+                  <p className="text-xs text-muted-foreground truncate">{t("stickyCta.subtitle")}</p>
                 </div>
                 <Button asChild size="sm" className="shrink-0">
                   <Link href="/#download" className="flex items-center gap-2">
                     <Download className="w-4 h-4" />
-                    Download
+                    {t("stickyCta.cta")}
                   </Link>
                 </Button>
               </div>

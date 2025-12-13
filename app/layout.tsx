@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
+import { LanguageProvider } from "@/components/language-provider";
 
 export const metadata: Metadata = {
   title: "VibeWatch — Clip-first movie & TV discovery",
@@ -36,7 +37,7 @@ export default function RootLayout({
         }}
         suppressHydrationWarning
       >
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
         <Analytics />
         <SpeedInsights />
       </body>
