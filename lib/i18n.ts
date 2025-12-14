@@ -556,8 +556,133 @@ export const translations: Record<Locale, Translation> = {
     footer: {
       tagline: "VibeWatch — Scoperta tramite clip per film e TV. Creato con il linguaggio di design CineStream.",
     },
-    terms: baseTerms,
-    privacy: basePrivacy,
+    terms: {
+      hero: {
+        eyebrow: "Termini d'uso e abbonamenti",
+        title: "Abbonamenti VibeWatch Pro e EULA",
+        desc: "Questi termini spiegano come funzionano gli abbonamenti VibeWatch Pro, le regole di fatturazione e rinnovo e l'EULA che governa l'app. Leggili prima di acquistare.",
+        badges: ["Ultimo aggiornamento: Gennaio 2025", "Applicabile a: app iOS VibeWatch"],
+      },
+      cards: [
+        {
+          title: "Opzioni di abbonamento",
+          items: [
+            "Founding Member Pro Mensile — 3,99€/mese (rinnovo automatico, tempo limitato, prezzo bloccato se attivo).",
+            "Founding Member Pro Annuale — 34,99€/anno (risparmi il 27%, prezzo bloccato se attivo).",
+            "Standard Pro Mensile — 8,99€/mese (rinnovo automatico, disponibile dopo il periodo founding).",
+            "Standard Pro Annuale — 69,99€/anno (risparmi il 35%).",
+            "Prezzi mostrati in valuta locale; l'App Store converte nella tua valuta.",
+            "Le prove si convertono a meno che non vengano annullate 24 ore prima della fine del periodo.",
+          ],
+        },
+        {
+          title: "Fatturazione e rinnovo",
+          items: [
+            "Addebitato sul tuo ID Apple alla conferma; Apple mostra il prezzo prima dell'acquisto.",
+            "Si rinnova automaticamente a meno che il rinnovo automatico non venga disattivato 24 ore prima della fine del periodo.",
+            "Gestisci o annulla in Impostazioni iOS > ID Apple > Abbonamenti.",
+          ],
+        },
+        {
+          title: "Cancellazione e rimborsi",
+          items: [
+            "Annulla in qualsiasi momento nelle Impostazioni iOS; l'accesso continua fino alla fine del periodo corrente.",
+            "I rimborsi sono gestiti da Apple secondo le politiche dell'App Store.",
+            "L'eliminazione dell'app non annulla l'abbonamento; disattiva il rinnovo automatico nelle Impostazioni.",
+          ],
+        },
+        {
+          title: "Blocco Prezzo Founding",
+          items: [
+            "Prezzo Founding disponibile durante il periodo di lancio; bloccato finché l'abbonamento rimane attivo.",
+            "La cancellazione fa perdere il prezzo bloccato; si applicheranno le tariffe standard se ritorni.",
+            "La garanzia si applica solo al livello selezionato (Mensile o Annuale)."
+          ],
+        },
+      ],
+      required: {
+        title: "Dettagli abbonamento richiesti da Apple",
+        items: [
+          { title: "Titolo abbonamento", body: ["VibeWatch Pro"] },
+          { title: "Durata", body: ["Mensile: 1 mese (rinnovo automatico)", "Annuale: 12 mesi (rinnovo automatico)"] },
+          {
+            title: "Prezzi",
+            body: [
+              "Founding Member Pro: 3,99€/mese o 34,99€/anno (bloccato se attivo).\n",
+              "Standard Pro: 8,99€/mese o 69,99€/anno.\n",
+              "Prezzi mostrati in valuta locale prima dell'acquisto; possono variare per regione/tasse.",
+            ],
+          },
+          {
+            title: "Termini di pagamento e rinnovo",
+            body: [
+              "Addebitato sul tuo ID Apple alla conferma dell'acquisto.",
+              "Si rinnova a meno che non venga disattivato 24 ore prima della fine del periodo.",
+              "Rinnovo addebitato sul tuo ID Apple; gestisci nelle impostazioni dell'App Store.",
+              "Il periodo di prova inutilizzato viene perso all'acquisto di un abbonamento.",
+            ],
+          },
+          {
+            title: "Link richiesti",
+            body: ["Privacy Policy: https://vibewatch.com/privacy", "Termini d'uso (Apple EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"]
+          },
+        ],
+      },
+    },
+    privacy: {
+      hero: {
+        eyebrow: "Privacy Policy",
+        title: "Come VibeWatch gestisce i tuoi dati",
+        desc: "Cosa raccogliamo, perché lo raccogliamo e le tue scelte. Leggi prima di usare VibeWatch.",
+        badges: ["Ultimo aggiornamento: Gennaio 2025", "Applicabile a: app iOS VibeWatch"],
+      },
+      sections: [
+        {
+          title: "Dati che raccogliamo",
+          body: [
+            "Dati account: email, ID dispositivo.",
+            "Utilizzo: clip visualizzate, mi piace/salti, diagnostica sessione.",
+            "Acquisti: stato abbonamento da App Store.",
+          ],
+        },
+        {
+          title: "Perché li raccogliamo",
+          body: [
+            "Personalizzare raccomandazioni e migliorare i prompt AI.",
+            "Mantenere liste e preferenze sincronizzate tra dispositivi.",
+            "Elaborare abbonamenti e fornire supporto.",
+          ],
+        },
+        {
+          title: "Condivisione e conservazione",
+          body: [
+            "Fornitori per analisi, monitoraggio errori e pagamenti (es. App Store).",
+            "Non vendiamo i tuoi dati personali.",
+            "Dati conservati finché l'account rimane attivo o come richiesto dalla legge.",
+          ],
+        },
+        {
+          title: "Le tue scelte",
+          body: [
+            "Richiedi accesso, correzione o cancellazione dei tuoi dati.",
+            "Disiscriviti dalle email di marketing.",
+            "Disattiva le analisi nelle impostazioni del dispositivo se disponibile.",
+          ],
+        },
+        {
+          title: "Sicurezza",
+          body: ["Usiamo crittografia in transito, controlli di accesso e revisioni regolari per proteggere i tuoi dati."],
+        },
+      ],
+      keyPointsTitle: "Punti chiave sulla privacy",
+      keyPoints: [
+        { text: "Nessuna vendita di dati. Non vendiamo mai i tuoi dati personali. I fornitori di terze parti ricevono solo ciò che serve per il servizio." },
+        { text: "Tu controlli le autorizzazioni nell'app e nelle Impostazioni iOS (notifiche, analisi, posizione)." },
+        { text: "Richiedi esportazione o cancellazione in qualsiasi momento via startingvibe2025@gmail.com", href: "mailto:startingvibe2025@gmail.com" },
+        { text: "Termini d'uso: EULA Standard Apple", href: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" },
+      ],
+      contact: "Per domande sulla privacy o richieste, scrivi a startingvibe2025@gmail.com.",
+    },
     home: {
       hero: {
         badge: "Consigli film & serie con AI, basati su clip",

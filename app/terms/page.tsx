@@ -36,32 +36,43 @@ export default function TermsPage() {
               <div key={item.title} className="p-4 rounded-2xl bg-white/50 dark:bg-black/20 border border-gray-200 dark:border-white/5">
                 <div className="font-bold text-gray-900 dark:text-white mb-2">{item.title}</div>
                 <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                  {item.body.map((line: string) =>
-                    line.startsWith("Privacy Policy") ? (
-                      <div key={line}>
-                        Privacy Policy:{" "}
-                        <Link href="/privacy" className="text-primary hover:underline">
-                          https://vibewatch.com/privacy
-                        </Link>
-                      </div>
-                    ) : line.startsWith("Terms of Use") ? (
-                      <div key={line}>
-                        Terms of Use (Apple EULA):{" "}
-                        <a
-                          href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-primary hover:underline"
-                        >
-                          Apple Standard EULA
-                        </a>
-                      </div>
-                    ) : (
-                      <div key={line}>
-                        {line}
-                      </div>
-                    )
-                  )}
+                  {item.body.map((line: string) => {
+                    const privacyUrl = "https://vibewatch.com/privacy";
+                    const appleUrl = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/";
+
+                    if (line.includes(privacyUrl)) {
+                      const parts = line.split(privacyUrl);
+                      return (
+                        <div key={line}>
+                          {parts[0]}
+                          <Link href="/privacy" className="text-primary hover:underline">
+                            {privacyUrl}
+                          </Link>
+                          {parts[1]}
+                        </div>
+                      );
+                    }
+
+                    if (line.includes(appleUrl)) {
+                      const parts = line.split(appleUrl);
+                      return (
+                        <div key={line}>
+                          {parts[0]}
+                          <a
+                            href={appleUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:underline"
+                          >
+                            Apple Standard EULA
+                          </a>
+                          {parts[1]}
+                        </div>
+                      );
+                    }
+
+                    return <div key={line}>{line}</div>;
+                  })}
                 </div>
               </div>
             ))}
