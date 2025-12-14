@@ -17,6 +17,8 @@ type HomeContent = {
     badge: string;
     title: string;
     subtitle: string;
+    solutionTitle: string;
+    solutionSubtitle: string;
     primaryCta: string;
     secondaryCta: string;
     foundingChip: string;
@@ -320,6 +322,8 @@ export const translations: Record<Locale, Translation> = {
         title: "Watch a clip, get the right pick in seconds.",
         subtitle:
           "Swipe cinematic clips from trending films and series. Ask Vibe AI to match your vibe—go from scrolling to streaming in under 2 minutes.",
+        solutionTitle: "The VibeWatch Solution",
+        solutionSubtitle: "From Endless Search to Perfect Match. Discover Films That Truly Match Your Mood, Instantly.",
         primaryCta: "Download free",
         secondaryCta: "See how it works",
         foundingChip: "Founding Member $3.99/mo — lock it in",
@@ -552,139 +556,16 @@ export const translations: Record<Locale, Translation> = {
     footer: {
       tagline: "VibeWatch — Scoperta tramite clip per film e TV. Creato con il linguaggio di design CineStream.",
     },
-    terms: {
-      hero: {
-        eyebrow: "Termini d\'uso e abbonamenti",
-        title: "Abbonamenti VibeWatch Pro ed EULA",
-        desc: "Termini su come funzionano gli abbonamenti Pro, regole di fatturazione/rinnovo ed EULA dell\'app. Leggili prima dell\'acquisto.",
-        badges: ["Ultimo aggiornamento: gennaio 2025", "Vale per: app iOS VibeWatch"],
-      },
-      cards: [
-        {
-          title: "Opzioni di abbonamento",
-          items: [
-            "Founding Member Pro Mensile — $3.99/mese (rinnovo auto, tempo limitato, prezzo bloccato se attivo).",
-            "Founding Member Pro Annuale — $34.99/anno (risparmi 27%, prezzo bloccato se attivo).",
-            "Standard Pro Mensile — $8.99/mese (auto-rinnovo, dopo il periodo founding).",
-            "Standard Pro Annuale — $69.99/anno (risparmi 35%).",
-            "Prezzi in USD; l\'App Store converte in valuta locale.",
-            "I trial si convertono se non cancelli 24 ore prima della fine.",
-          ],
-        },
-        {
-          title: "Fatturazione e rinnovo",
-          items: [
-            "Addebito su Apple ID al momento dell\'acquisto; Apple mostra il prezzo prima dell\'ordine.",
-            "Rinnovo automatico salvo disattivare l\'auto-rinnovo 24h prima della scadenza.",
-            "Gestisci o cancella in Impostazioni iOS > ID Apple > Abbonamenti.",
-          ],
-        },
-        {
-          title: "Annullamento e rimborsi",
-          items: [
-            "Puoi cancellare in Impostazioni iOS; l\'accesso continua fino a fine periodo.",
-            "Rimborsi gestiti da Apple secondo le policy App Store.",
-            "Eliminare l\'app non cancella l\'abbonamento; disattiva l\'auto-rinnovo nelle impostazioni.",
-          ],
-        },
-        {
-          title: "Prezzo Founding bloccato",
-          items: [
-            "Prezzo founding disponibile al lancio; bloccato finché l\'abbonamento resta attivo.",
-            "Se annulli perdi il prezzo bloccato; al ritorno si applicano i prezzi standard.",
-            "Vale solo per il piano scelto (Mensile o Annuale).",
-          ],
-        },
-      ],
-      required: {
-        title: "Dettagli di abbonamento richiesti da Apple",
-        items: [
-          { title: "Titolo abbonamento", body: ["VibeWatch Pro"] },
-          { title: "Durate", body: ["Mensile: 1 mese (auto-rinnovo)", "Annuale: 12 mesi (auto-rinnovo)"] },
-          {
-            title: "Prezzi",
-            body: [
-              "Founding Member Pro: €3,99/mese o €34,99/anno (bloccato se attivo).\n",
-              "Standard Pro: €8,99/mese o €69,99/anno.\n",
-              "Prezzi mostrati in valuta locale prima dell\'acquisto; possono variare per regione/tasse.",
-            ],
-          },
-          {
-            title: "Pagamento e rinnovo",
-            body: [
-              "Addebito sull\'Apple ID al momento dell\'acquisto.",
-              "Rinnova salvo disattivare 24h prima della fine periodo.",
-              "Il rinnovo viene addebitato su Apple ID; gestisci in impostazioni App Store.",
-              "Il periodo di prova residuo decade quando acquisti un abbonamento.",
-            ],
-          },
-          {
-            title: "Link richiesti",
-            body: ["Privacy Policy: https://vibewatch.com/privacy", "Termini d\'uso (Apple EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"],
-          },
-        ],
-      },
-    },
-    privacy: {
-      hero: {
-        eyebrow: "Privacy Policy",
-        title: "Come VibeWatch gestisce i tuoi dati",
-        desc: "Cosa raccogliamo, perché e le tue scelte. Leggi prima di usare VibeWatch.",
-        badges: ["Ultimo aggiornamento: gennaio 2025", "Vale per: app iOS VibeWatch"],
-      },
-      sections: [
-        {
-          title: "Dati che raccogliamo",
-          body: [
-            "Base account: email, ID dispositivo.",
-            "Utilizzo: clip viste, like/skip, diagnostica sessioni.",
-            "Acquisti: stato abbonamento dall\'App Store.",
-          ],
-        },
-        {
-          title: "Perché li raccogliamo",
-          body: [
-            "Personalizzare consigli e migliorare i prompt AI.",
-            "Tenere sincronizzate liste e preferenze tra dispositivi.",
-            "Gestire abbonamenti e supporto.",
-          ],
-        },
-        {
-          title: "Condivisione e conservazione",
-          body: [
-            "Fornitori per analytics, errori e pagamenti (es. App Store).",
-            "Non vendiamo i tuoi dati personali.",
-            "Dati conservati mentre l\'account è attivo o richiesto per legge.",
-          ],
-        },
-        {
-          title: "Le tue scelte",
-          body: [
-            "Richiedi accesso, correzione o eliminazione dei dati.",
-            "Disattiva email marketing.",
-            "Disattiva analytics nelle impostazioni del dispositivo se disponibili.",
-          ],
-        },
-        {
-          title: "Sicurezza",
-          body: ["Crittografia in transito, controlli di accesso e revisioni regolari per proteggere i dati."],
-        },
-      ],
-      keyPointsTitle: "Punti chiave sulla privacy",
-      keyPoints: [
-        { text: "Nessuna vendita di dati. Non vendiamo i tuoi dati personali; i fornitori terzi ricevono solo ciò che serve per erogare il servizio." },
-        { text: "Controlli tu i permessi in-app e nelle Impostazioni iOS (notifiche, analytics, posizione)." },
-        { text: "Richiedi esportazione o cancellazione in qualsiasi momento via startingvibe2025@gmail.com", href: "mailto:startingvibe2025@gmail.com" },
-        { text: "Termini d\'uso: Apple Standard EULA", href: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" },
-      ],
-      contact: "Per domande privacy, scrivi a startingvibe2025@gmail.com.",
-    },
+    terms: baseTerms,
+    privacy: basePrivacy,
     home: {
       hero: {
         badge: "Consigli film & serie con AI, basati su clip",
         title: "Guarda una clip, trova il titolo giusto in pochi secondi.",
         subtitle:
           "Scorri clip cinematografiche da film e serie di tendenza. Chiedi a Vibe AI di abbinare il tuo mood: dallo scroll allo streaming in meno di 2 minuti.",
+        solutionTitle: "La Soluzione VibeWatch",
+        solutionSubtitle: "Dalla ricerca infinita al match perfetto. Scopri film che rispecchiano davvero il tuo mood, all'istante.",
         primaryCta: "Scarica gratis",
         secondaryCta: "Scopri come funziona",
         foundingChip: "Founding Member 3,99$/mese — blocca ora",
@@ -696,7 +577,7 @@ export const translations: Record<Locale, Translation> = {
         metric: "In media meno di 2 minuti per scegliere",
         items: [
           { title: "Clip senza spoiler", desc: "Scene da 20–30 secondi che mostrano tono e ritmo senza svelare colpi di scena." },
-          { title: "AI che segue il tuo mood", desc: "Descrivi il tuo mood: l\'AI cura una selezione corta così smetti di scrollare e inizi a guardare." },
+          { title: "AI che segue il tuo mood", desc: "Descrivi il tuo mood: l'AI cura una selezione corta così smetti di scrollare e inizi a guardare." },
           { title: "Decisioni chiare", desc: "Link streaming, durata e segnali social proprio dove ti servono." },
         ],
       },
@@ -713,10 +594,10 @@ export const translations: Record<Locale, Translation> = {
           "Finisci per rivedere The Office",
         ],
         afterItems: [
-          "Apri l\'app → clip istantanee",
+          "Apri l'app → clip istantanee",
           "Swipe tra scene da 30 secondi",
           "Percepisci il mood senza spoiler",
-          "Chiedi all\'AI: \"Voglio un thriller mind‑bending\"",
+          "Chiedi all'AI: \"Voglio un thriller mind‑bending\"",
           "Stai guardando qualcosa di nuovo in 2 minuti",
         ],
       },
@@ -739,7 +620,7 @@ export const translations: Record<Locale, Translation> = {
         cards: [
           { title: "Partenza lampo", desc: "2 clip selezionate compaiono in pochi secondi: stai già guardando, non aspettando spot o trailer." },
           { title: "Feed vario", desc: "Film + serie bilanciati con generi diversi e classici per tenere fresca la tua lista." },
-          { title: "Adattivo all\'engagement", desc: "Like, tempo di visione e liste regolano cosa vedi dopo. Salti? Vibe AI adatta il feed in tempo reale." },
+          { title: "Adattivo all'engagement", desc: "Like, tempo di visione e liste regolano cosa vedi dopo. Salti? Vibe AI adatta il feed in tempo reale." },
         ],
       },
       ai: {
@@ -750,10 +631,10 @@ export const translations: Record<Locale, Translation> = {
         aiReplyOne:
           "Ne ho 3: Fracture (1h 53) con un twist in tribunale, Coherence (1h 29) per suspense sci‑fi, e The Invitation (1h 40) per una tensione lenta.",
         aiReplyTwo: "Vuoi trailer o clip rapide per ciascuno?",
-        promptChips: ["Prompt: \"Serie sportive feel-good\"", "Prompt: \"Thriller a combustione lenta stasera\""],
+        promptChips: ["Prompt: \"Serie sportive feel-good\"", "Prompt: \"Thrillers de ritmo lento hoje\""],
         rightTitle: "Pronto a guardare quando vuoi",
         rightDesc:
-          "Salva qualsiasi clip nelle liste, vedi dove è in streaming e sincronizza i dispositivi. Gratis: 15 clip al giorno. Pro: Clip e AI illimitati da 3,99$/mese (tariffa Founding Member - tempo limitato!)",
+          "Salva qualsiasi clipe em listas, veja onde está disponível e sincronize dispositivos. Grátis: 15 clipes diários. Pro: Clipes e IA ilimitados a partir de 3,99$/mese (tariffa Founding Member - tempo limitato!)",
         cards: [
           { title: "Vicolo Neon", genre: "Cyberpunk", platform: "Prime" },
           { title: "Golden Hour", genre: "Feel-good", platform: "Netflix" },
@@ -766,7 +647,7 @@ export const translations: Record<Locale, Translation> = {
         title: "Tre passi per il tuo nuovo preferito",
         steps: [
           { num: "01", title: "Apri la tab Clips", desc: "Premi play e scorri una selezione pre-caricata delle migliori scene del giorno. Dopamina istantanea, zero indecisione." },
-          { num: "02", title: "Chiedi a Vibe AI", desc: "Descrivi mood o vincoli. L\'AI cura i titoli, mostra clip e aggiorna le raccomandazioni in tempo reale." },
+          { num: "02", title: "Chiedi a Vibe AI", desc: "Descrivi mood o vincoli. L'AI cura i titoli, mostra clip e aggiorna le raccomandazioni in tempo reale." },
           { num: "03", title: "Salva e guarda", desc: "Aggiungi ai preferiti, condividi e apri dove è in streaming. Passa a Pro da 3,99$/mese (tariffa Founding Member - tempo limitato!)." },
         ],
       },
@@ -827,18 +708,18 @@ export const translations: Record<Locale, Translation> = {
             id: "download",
             name: "Scarica ora",
             price: "",
-            desc: "Ottieni VibeWatch sull\'App Store con un tap.",
+            desc: "Ottieni VibeWatch sull'App Store con un tap.",
             perks: ["Installazione immediata su iOS", "Sincronizza liste e preferenze", "Include piano gratuito + upgrade Pro"],
             chip: "Consigliato",
-            primaryCta: "Scarica l\'app",
+            primaryCta: "Scarica l'app",
             showCurrency: false,
           },
         ],
         appStoreCta: "Scarica su App Store",
         tryPromptsCta: "Prova i prompt Vibe AI",
-        legalIntro: "Informazioni sull\'abbonamento VibeWatch Pro:",
+        legalIntro: "Informazioni sull'abbonamento VibeWatch Pro:",
         legalLinks: {
-          terms: "Termini d\'uso e dettagli abbonamento",
+          terms: "Termini d'uso e dettagli abbonamento",
           privacy: "Privacy Policy",
           eula: "EULA Apple",
         },
@@ -869,7 +750,7 @@ export const translations: Record<Locale, Translation> = {
             title: "Legale e policy",
             desc: "Rivedi i dettagli che tengono trasparenti abbonamento e dati.",
             list: [
-              "Termini d\'uso / EULA — termini di abbonamento, fatturazione e rinnovo.",
+              "Termini d'uso / EULA — termini di abbonamento, fatturazione e rinnovo.",
               "Privacy Policy — cosa raccogliamo, perché e come richiedere la cancellazione.",
             ],
           },
@@ -985,7 +866,10 @@ export const translations: Record<Locale, Translation> = {
           },
           {
             title: "Liens requis",
-            body: ["Politique de confidentialité : https://vibewatch.com/privacy", "Conditions d\'utilisation (Apple EULA) : https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"],
+            body: [
+              "Politique de confidentialité : https://vibewatch.com/privacy",
+              "Conditions d\'utilisation (Apple EULA) : https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+            ],
           },
         ],
       },
@@ -1050,6 +934,8 @@ export const translations: Record<Locale, Translation> = {
         title: "Regarde un clip, trouve le bon titre en secondes.",
         subtitle:
           "Fais défiler des clips ciné de films et séries tendance. Demande à Vibe AI selon ton mood — du scroll au streaming en moins de 2 minutes.",
+        solutionTitle: "La Solution VibeWatch",
+        solutionSubtitle: "De la recherche sans fin au match parfait. Découvrez des films qui correspondent vraiment à votre humeur, instantanément.",
         primaryCta: "Télécharger gratuitement",
         secondaryCta: "Voir comment ça marche",
         foundingChip: "Founding Member 3,99$/mois — bloque le prix",
@@ -1113,7 +999,7 @@ export const translations: Record<Locale, Translation> = {
           'Décris le mood ("casse cozy", "sci‑fi optimiste", "série < 30 min") et Vibe AI renvoie une sélection serrée avec clips immédiats. Enregistre ou ouvre sur ta plateforme.',
         promptOne: "Besoin d'un mystère mind-bending sous 2 heures.",
         aiReplyOne:
-          "J'en ai 3 : Fracture (1h53) avec un twist au tribunal, Coherence (1h29) pour du suspense sci‑fi, et The Invitation (1h40) pour une tension lente.",
+          "J'en ai 3 : Fracture (1h53) avec un twist au tribunal, Coherence (1h29) pour du suspense sci‑fi, e The Invitation (1h40) pour une tension lente.",
         aiReplyTwo: "Tu veux des bandes-annonces ou des clips rapides ?",
         promptChips: ['Prompt : "Séries sport feel-good"', 'Prompt : "Thrillers à combustion lente ce soir"'],
         rightTitle: "Prêt à regarder à ton rythme",
@@ -1403,7 +1289,7 @@ export const translations: Record<Locale, Translation> = {
       keyPointsTitle: "Puntos clave de privacidad",
       keyPoints: [
         { text: "Sin venta de datos. Nunca vendemos tus datos personales. Los proveedores terceros solo reciben lo necesario para el servicio." },
-        { text: "Tú controlas los permisos en la app y en Ajustes de iOS (notificações, analytics, ubicación)." },
+        { text: "Tú controlas los permisos en la app y en Ajustes de iOS (notificaciones, analytics, ubicación)." },
         { text: "Solicita exportar o eliminar en cualquier momento vía startingvibe2025@gmail.com", href: "mailto:startingvibe2025@gmail.com" },
         { text: "Términos de uso: EULA estándar de Apple", href: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" },
       ],
@@ -1415,6 +1301,8 @@ export const translations: Record<Locale, Translation> = {
         title: "Mira un clip, consigue el título correcto en segundos.",
         subtitle:
           "Desplázate por clips de películas y series en tendencia. Pídele a Vibe AI que combine tu mood: del scroll al streaming en menos de 2 minutos.",
+        solutionTitle: "La Solución VibeWatch",
+        solutionSubtitle: "De la búsqueda interminable al match perfecto. Descubre películas que realmente coinciden con tu estado de ánimo, al instante.",
         primaryCta: "Descargar gratis",
         secondaryCta: "Ver cómo funciona",
         foundingChip: "Founding Member 3,99$/mes — bloquea el precio",
@@ -1475,7 +1363,7 @@ export const translations: Record<Locale, Translation> = {
       ai: {
         leftTitle: "Pide a Vibe AI tu próximo título",
         leftDesc:
-          'Describe el mood ("atracos cozy", "sci‑fi optimista", "series < 30 min") y Vibe AI devuelve una selección breve con clips al instante. Guarda en listas o abre en tu plataforma.',
+          'Describe el mood ("atracos cozy", "sci‑fi optimista", "série < 30 min") y Vibe AI devuelve una selección breve con clips al instante. Guarda en listas o abre en tu plataforma.',
         promptOne: "Busco un misterio mind-bending de menos de 2 horas.",
         aiReplyOne:
           "Tengo 3: Fracture (1h53) con giro judicial, Coherence (1h29) para suspenso sci‑fi, y The Invitation (1h40) para tensión lenta.",
@@ -1497,7 +1385,7 @@ export const translations: Record<Locale, Translation> = {
         steps: [
           { num: "01", title: "Abre la pestaña Clips", desc: "Pulsa play y desliza una pila precargada con las mejores escenas del día. Dopamina al instante, cero dudas." },
           { num: "02", title: "Pide a Vibe AI", desc: "Describe mood o restricciones. La IA cura títulos, muestra clips y ajusta las recomendaciones en tiempo real." },
-          { num: "03", title: "Guarda y ve", desc: "Añade favoritos, comparte, abre donde se transmite. Pasa a Pro desde 3,99$/mes (tarifa Founding Member - tiempo limitado)." },
+          { num: "03", title: "Guarda y ve", desc: "Añade favoritos, comparte, abre donde se transmite. Pasa a Pro desde 3,99$/mes (tarifa Founding Member - tiempo limitad o)." },
         ],
       },
       faq: {
@@ -1558,7 +1446,7 @@ export const translations: Record<Locale, Translation> = {
             name: "Descargar ahora",
             price: "",
             desc: "Consigue VibeWatch en App Store con un tap.",
-            perks: ["Instalación inmediata en iOS", "Sincroniza listas y preferencias", "Incluye plan gratis + upgrade Pro"],
+            perks: ["Instalación inmediata en iOS", "Sincroniza listas y preferencias", "Inclui plano gratis + upgrade Pro"],
             chip: "Recomendado",
             primaryCta: "Descargar la app",
             showCurrency: false,
@@ -1780,6 +1668,8 @@ export const translations: Record<Locale, Translation> = {
         title: "Veja um clipe e ache o título certo em segundos.",
         subtitle:
           "Role por clipes de filmes e séries em alta. Peça ao Vibe AI para combinar com seu mood: do scroll ao streaming em menos de 2 minutos.",
+        solutionTitle: "A Solução VibeWatch",
+        solutionSubtitle: "Da busca infinita ao match perfeito. Descubra filmes que realmente combinam com seu humor, instantaneamente.",
         primaryCta: "Baixar grátis",
         secondaryCta: "Veja como funciona",
         foundingChip: "Founding Member US$3,99/mês — bloqueie agora",
@@ -1830,11 +1720,11 @@ export const translations: Record<Locale, Translation> = {
       clips: {
         eyebrow: "Feito para fãs",
         title: "Clipes que facilitam decidir o que assistir",
-        desc: "Pré-carregamos um mix personalizado de títulos em alta, aclamados e clássicos, pontuamos com seu mood e entregamos um feed de clipes para você sentir a história antes de começar.",
+        desc: "Pré-carregamos um mix personalizado de títulos em alta, aclamados e clássicos, pontuamos com seu mood e entregamos um feed de clipes para você sentir a história antes de verla.",
         cards: [
-          { title: "Início relâmpago", desc: "2 clipes selecionados aparecem em segundos: você já está assistindo, sem esperar anúncios ou trailers." },
+          { title: "Démarrage éclair", desc: "2 clips selecionados aparecem em segundos: você já está assistindo, sem esperar anúncios ou trailers." },
           { title: "Feed diverso", desc: "Filmes + séries equilibrados com diversidade de gêneros e clássicos para manter a fila fresca." },
-          { title: "Ciente do engajamento", desc: "Likes, tempo de visualização e listas ajustam o que vem depois. Pulou? Vibe AI adapta o feed ao vivo." },
+          { title: "Adaptado à interação", desc: "Likes, tempo de visualização e listas ajustam o que vem depois. Pulou? Vibe AI adapta o feed ao vivo." },
         ],
       },
       ai: {
