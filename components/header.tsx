@@ -1,124 +1,56 @@
 "use client";
 
-import { useEffect, useState } from "react";
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { Menu } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { MobileMenu } from "@/components/mobile-menu";
-import { LanguageSwitcher } from "@/components/language-switcher";
-import { useTranslation } from "@/components/language-provider";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export function Header() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState<string>("top");
-  const { t } = useTranslation();
-  const pathname = usePathname();
-  const isHome = pathname === "/";
-
-  const navLinks = [
-    { href: "/#top", label: t("header.nav.home"), id: "top" },
-    { href: "/#clips", label: t("header.nav.features"), id: "clips" },
-    { href: "/#ai", label: t("header.nav.ai"), id: "ai" },
-    { href: "/#how", label: t("header.nav.how"), id: "how" },
-    { href: "/#support", label: t("header.nav.support"), id: "support" },
-  ];
-
-  const highlightClass = (id: string) =>
-    [
-      "px-3 py-2 rounded-xl transition-colors",
-      activeSection === id
-        ? "bg-primary/15 text-foreground border border-primary/40 shadow-sm"
-        : "text-muted-foreground hover:text-foreground hover:bg-secondary/60",
-    ].join(" ");
-
-  // Lightweight scroll-spy to highlight nav items
-  useEffect(() => {
-    if (!isHome) {
-      if (pathname.startsWith("/privacy")) {
-        setActiveSection("privacy");
-      } else if (pathname.startsWith("/terms")) {
-        setActiveSection("terms");
-      } else {
-        setActiveSection("");
-      }
-      return;
-    }
-    const ids = ["top", "clips", "ai", "how", "support", "download"];
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-        if (visible[0]?.target?.id) {
-          setActiveSection(visible[0].target.id);
-        }
-      },
-      { rootMargin: "-40% 0px -40% 0px", threshold: [0.25, 0.5, 0.75] }
-    );
-
-    ids.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, [isHome, pathname]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <>
-      <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-background/75 border-b border-border supports-[backdrop-filter]:bg-background/65">
-        <nav className="container mx-auto max-w-7xl px-4 md:px-6 py-3.5">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-2.5 font-bold text-lg tracking-tight">
-              <Image src="/logo.png" alt="VibeWatch logo" width={32} height={32} className="rounded-lg" />
-              <span>VibeWatch</span>
+    <nav className="fixed w-full z-50 backdrop-blur-md bg-white/70 dark:bg-background-dark/80 border-b border-gray-200 dark:border-white/5 transition-all duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+            <Link href="/" className="flex items-center gap-2">
+              <img src="/logo.png" alt="VibeWatch Logo" className="w-8 h-8 rounded-full" />
+              <span className="font-bold text-xl tracking-tight text-gray-900 dark:text-white">VibeWatch</span>
             </Link>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-3 text-sm text-muted-foreground">
-              {navLinks.map((item) => (
-                <Link key={item.id} href={item.href} className={highlightClass(item.id)}>
-                  {item.label}
-                </Link>
-              ))}
-              <Link href="/terms" className={highlightClass("terms")}>
-                {t("header.nav.terms")}
-              </Link>
-              <Link href="/privacy" className={highlightClass("privacy")}>
-                {t("header.nav.privacy")}
-              </Link>
-            </div>
-
-            {/* Desktop CTA */}
-            <div className="hidden md:flex items-center gap-3">
-              <div className="px-3 py-2 rounded-full bg-primary/10 border border-primary/30 text-xs font-semibold text-primary">
-                {t("header.foundingChip")}
-              </div>
-              <Button asChild>
-                <Link href="/#download">{t("header.download")}</Link>
-              </Button>
-              <LanguageSwitcher />
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(true)}
-              className="md:hidden p-2 rounded-xl hover:bg-secondary/60 transition-colors flex items-center gap-2"
-              aria-label="Open menu"
+          </div>
+          <div className="hidden md:flex items-center space-x-8">
+            <Link className="text-sm font-medium text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors" href="/#features">Features</Link>
+            <Link className="text-sm font-medium text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors" href="/#how-it-works">How it Works</Link>
+            <Link className="text-sm font-medium text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors" href="/#pricing">Pricing</Link>
+            <Link className="text-sm font-medium text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors" href="/#faq">FAQ</Link>
+            <Link className="text-sm font-medium text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors" href="/terms">Terms</Link>
+            <Link className="text-sm font-medium text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors" href="/privacy">Privacy</Link>
+          </div>
+          <div className="md:hidden flex items-center">
+            <button 
+              className="text-gray-500 dark:text-gray-300 hover:text-white focus:outline-none"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <span className="px-3 py-1.5 rounded-full bg-primary/15 border border-primary/30 text-[11px] font-semibold text-primary">
-                {t("header.mobileChip")}
-              </span>
-              <Menu className="w-6 h-6" />
+              {isMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
             </button>
           </div>
-        </nav>
-      </header>
-
+        </div>
+      </div>
       {/* Mobile Menu */}
-      <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
-    </>
+      {isMenuOpen && (
+        <div className="md:hidden bg-white dark:bg-background-dark border-b border-gray-200 dark:border-white/5">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <Link className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-white" href="/#features" onClick={() => setIsMenuOpen(false)}>Features</Link>
+            <Link className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-white" href="/#how-it-works" onClick={() => setIsMenuOpen(false)}>How it Works</Link>
+            <Link className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-white" href="/#pricing" onClick={() => setIsMenuOpen(false)}>Pricing</Link>
+            <Link className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-white" href="/#faq" onClick={() => setIsMenuOpen(false)}>FAQ</Link>
+            <div className="border-t border-gray-200 dark:border-white/10 my-2 pt-2">
+              <Link className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-white" href="/terms" onClick={() => setIsMenuOpen(false)}>Terms</Link>
+              <Link className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-white" href="/privacy" onClick={() => setIsMenuOpen(false)}>Privacy</Link>
+            </div>
+          </div>
+        </div>
+      )}
+    </nav>
   );
 }

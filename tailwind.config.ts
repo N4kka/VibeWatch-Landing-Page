@@ -21,9 +21,15 @@ export default {
           foreground: "hsl(var(--popover-foreground))",
         },
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "#FF8C42", // Updated from Stitch design
           foreground: "hsl(var(--primary-foreground))",
         },
+        "primary-hover": "#E0732E",
+        "background-light": "#F3F4F6",
+        "background-dark": "#0B0C15",
+        "surface-dark": "#161824",
+        "surface-dark-lighter": "#212436",
+        "accent-purple": "#6D5CFF",
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -51,10 +57,27 @@ export default {
           "5": "hsl(var(--chart-5))",
         },
       },
+      fontFamily: {
+        problem: ["var(--font-ibm-plex-sans)", "sans-serif"],
+        solution: ["var(--font-inter)", "sans-serif"],
+      },
+      backgroundImage: {
+        "hero-gradient": "linear-gradient(135deg, rgba(255,140,66,0.1) 0%, rgba(109,92,255,0.05) 50%, rgba(11,12,21,0) 100%)",
+        "card-gradient": "linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%)",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      animation: {
+        "fade-in-up": "fadeInUp 0.8s ease-out forwards",
+      },
+      keyframes: {
+        fadeInUp: {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
     },
   },

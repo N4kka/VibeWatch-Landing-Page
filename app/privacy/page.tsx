@@ -1,270 +1,90 @@
+"use client";
+
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-
-export const metadata = {
-  title: "VibeWatch — Privacy Policy",
-  description: "How VibeWatch handles your data",
-};
+import { useTranslation } from "@/components/language-provider";
+import { translations } from "@/lib/i18n";
 
 export default function PrivacyPage() {
+  const { t } = useTranslation();
+  const privacy = t<typeof translations.en.privacy>("privacy");
+
   return (
-    <>
+    <div className="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-sans antialiased overflow-x-hidden selection:bg-primary selection:text-white min-h-screen flex flex-col">
       <Header />
-      <main className="container mx-auto max-w-5xl px-6 py-12 md:py-16">
-        {/* Hero */}
-        <section className="grid md:grid-cols-2 gap-8 items-start py-8">
-          <div>
-            <div className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Privacy Policy</div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">How VibeWatch handles your data</h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-              We collect only what is needed to personalize your clip feed, deliver AI recommendations, and sync lists across devices. Below is a concise summary of the data we collect, why we use it, and how you can manage or delete it.
-            </p>
+      
+      <main className="flex-grow container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+        <section className="grid md:grid-cols-2 gap-12 items-start">
+          {/* Left Column: Hero */}
+          <div className="space-y-6">
+            <div className="text-sm text-primary font-semibold tracking-wider uppercase mb-2">{privacy.hero.eyebrow}</div>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">{privacy.hero.title}</h1>
+            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-4 font-problem">{privacy.hero.desc}</p>
             <div className="flex flex-wrap gap-2.5 text-sm">
-              <span className="px-2.5 py-2 rounded-full border border-border bg-secondary/50 text-muted-foreground">Last updated: January 2025</span>
-              <span className="px-2.5 py-2 rounded-full border border-border bg-secondary/50 text-muted-foreground">
-                Contact: <a href="mailto:startingvibe2025@gmail.com" className="text-primary hover:underline">startingvibe2025@gmail.com</a>
-              </span>
+              {privacy.hero.badges.map((badge: string) => (
+                <span key={badge} className="px-3 py-1.5 rounded-full border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 text-gray-600 dark:text-gray-400">
+                  {badge}
+                </span>
+              ))}
             </div>
           </div>
-          <div className="rounded-2xl border-2 border-primary/50 bg-gradient-to-br from-primary/10 to-blue-500/10 backdrop-blur p-6 shadow-xl">
-            <h3 className="text-xl font-semibold mb-4">🔒 Key Privacy Points</h3>
-            <ul className="text-muted-foreground leading-relaxed space-y-3">
-              <li className="flex gap-3">
-                <span className="text-primary">•</span>
-                <span><strong>No data selling.</strong> We never sell your personal data. Third-party providers only receive what they need to run the service.</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-primary">•</span>
-                <span><strong>You control permissions</strong> in-app and in iOS Settings (notifications, analytics, location).</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-primary">•</span>
-                <span><strong>Request export or deletion</strong> anytime via <a href="mailto:startingvibe2025@gmail.com" className="text-primary hover:underline">startingvibe2025@gmail.com</a></span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-primary">•</span>
-                <span><strong>Terms of Use:</strong> <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Apple Standard EULA</a></span>
-              </li>
+
+          {/* Right Column: Key Points */}
+          <div className="rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/5 to-accent-purple/5 backdrop-blur-sm p-6 shadow-xl">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+              <span>🔒</span> {privacy.keyPointsTitle}
+            </h3>
+            <ul className="space-y-4 text-sm text-gray-600 dark:text-gray-400">
+              {privacy.keyPoints.map((point: { text: string; href?: string }, idx: number) => (
+                <li key={idx} className="flex gap-3 items-start">
+                  <span className="text-primary font-bold mt-0.5">•</span>
+                  <span>
+                    {point.href ? (
+                      <a 
+                        href={point.href} 
+                        target={point.href.startsWith("mailto:") ? undefined : "_blank"} 
+                        rel={point.href.startsWith("mailto:") ? undefined : "noopener noreferrer"} 
+                        className="text-primary hover:text-primary-hover underline decoration-primary/30 underline-offset-2 transition-colors"
+                      >
+                        {point.text}
+                      </a>
+                    ) : (
+                      point.text
+                    )}
+                  </span>
+                </li>
+              ))}
             </ul>
           </div>
         </section>
 
-        {/* Apple-Required Legal Links */}
-        <section className="py-12 border-t-2 border-primary/30">
-          <div className="max-w-4xl mx-auto">
-            <div className="rounded-2xl border-2 border-primary/50 bg-gradient-to-br from-primary/10 to-blue-500/10 backdrop-blur p-8 shadow-xl">
-              <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                <span className="text-4xl">📱</span>
-                Important Legal Documents for App Store Compliance
-              </h2>
-
-              <div className="space-y-5">
-                <div className="p-5 rounded-xl bg-background/60 border border-border">
-                  <h3 className="text-xl font-semibold mb-3 text-primary">Privacy Policy (This Page)</h3>
-                  <p className="text-muted-foreground mb-2">
-                    You are currently viewing our complete Privacy Policy, which explains:
-                  </p>
-                  <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
-                    <li>What data we collect and why</li>
-                    <li>How we use and protect your information</li>
-                    <li>Your rights and how to manage your data</li>
-                    <li>How to request data export or deletion</li>
-                  </ul>
-                  <p className="mt-3">
-                    <strong>Link:</strong> <span className="text-primary">https://vibewatch.com/privacy</span>
-                  </p>
-                </div>
-
-                <div className="p-5 rounded-xl bg-background/60 border border-border">
-                  <h3 className="text-xl font-semibold mb-3 text-primary">Terms of Use / EULA</h3>
-                  <p className="text-muted-foreground mb-3">
-                    VibeWatch uses the Apple Standard End User License Agreement (EULA), which governs your use of the app and includes important subscription terms.
-                  </p>
-                  <div className="flex flex-col gap-2">
-                    <div>
-                      <strong>Apple Standard EULA:</strong>{" "}
-                      <a
-                        href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary hover:underline"
-                      >
-                        View Apple&apos;s EULA
-                      </a>
-                    </div>
-                    <div>
-                      <strong>Subscription Details:</strong>{" "}
-                      <Link href="/terms" className="text-primary hover:underline">
-                        View our complete Terms of Use and subscription information
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="p-5 rounded-xl bg-background/60 border border-border">
-                  <h3 className="text-xl font-semibold mb-3 text-primary">Contact for Privacy Requests</h3>
-                  <p className="text-muted-foreground mb-2">
-                    For any privacy-related questions, data access requests, or deletion requests:
-                  </p>
-                  <p>
-                    <strong>Email:</strong>{" "}
-                    <a href="mailto:startingvibe2025@gmail.com" className="text-primary hover:underline">
-                      startingvibe2025@gmail.com
-                    </a>
-                  </p>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    Please include your account email and a description of your request. We typically respond within 1-2 business days.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* What we collect */}
-        <section className="py-12">
-          <div className="text-xs text-muted-foreground uppercase tracking-wider mb-2">What we collect</div>
-          <h2 className="text-3xl font-bold mb-6">Information necessary to run VibeWatch</h2>
-          <div className="grid md:grid-cols-2 gap-5">
-            {[
-              {
-                title: "Account & identity",
-                items: ["Email, username, optional avatar; authentication tokens (Supabase auth).", "Sign in with Apple details when you choose that option."]
-              },
-              {
-                title: "App activity",
-                items: ["Clips you view, skip, like, save; lists you create; comments/reactions.", "Search terms, AI prompts, streaming platform preferences."]
-              },
-              {
-                title: "Device & technical",
-                items: ["Device type, OS version, language, country (for availability checks).", "Crash logs and push notification token."]
-              },
-              {
-                title: "Purchases & support",
-                items: ["Product identifiers, receipts, entitlement status via Apple/RevenueCat (never full card details).", "Support messages sent to startingvibe2025@gmail.com."]
-              },
-            ].map((item, i) => (
-              <div key={i} className="rounded-2xl border border-border bg-card/40 backdrop-blur p-5 shadow-lg min-h-[200px] flex flex-col gap-2.5">
-                <h3 className="text-xl font-semibold">{item.title}</h3>
-                <ul className="text-muted-foreground leading-relaxed list-disc pl-5 space-y-2">
-                  {item.items.map((text, j) => <li key={j}>{text}</li>)}
+        {/* Detailed Sections */}
+        <section className="py-16 mt-12 border-t border-gray-200 dark:border-white/10">
+          <div className="grid md:grid-cols-2 gap-6">
+            {privacy.sections.map((section: { title: string; body: string[] }) => (
+              <div key={section.title} className="rounded-3xl border border-gray-200 dark:border-white/5 bg-white dark:bg-surface-dark p-6 shadow-lg hover:border-primary/30 transition-colors flex flex-col gap-3">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">{section.title}</h3>
+                <ul className="text-gray-600 dark:text-gray-400 leading-relaxed list-disc pl-5 space-y-2 text-sm">
+                  {section.body.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
                 </ul>
               </div>
             ))}
           </div>
         </section>
 
-        {/* How we use it */}
-        <section className="py-12">
-          <div className="text-xs text-muted-foreground uppercase tracking-wider mb-2">How we use it</div>
-          <h2 className="text-3xl font-bold mb-6">Purpose-driven processing</h2>
-          <div className="grid md:grid-cols-2 gap-5">
-            {[
-              {
-                title: "Run core features",
-                items: ["Authenticate you, sync lists and comments, and deliver personalized clip feeds.", "Show where titles are streaming, keep your preferences in sync, and prevent abuse."]
-              },
-              {
-                title: "AI recommendations",
-                items: ["Prompts and minimal context are sent to our AI provider (Cerebras) to generate suggestions.", "Requests are logged to maintain quality and prevent misuse."]
-              },
-              {
-                title: "Payments & access",
-                items: ["Verify App Store purchases and manage Pro entitlements with RevenueCat.", "We rely on Apple for billing; refunds are handled by Apple."]
-              },
-              {
-                title: "Quality & reliability",
-                items: ["Optional analytics (Firebase when available) for performance and crash diagnostics.", "Notifications you opt into (new clips, reminders); you can disable them anytime."]
-              },
-            ].map((item, i) => (
-              <div key={i} className="rounded-2xl border border-border bg-card/40 backdrop-blur p-5 shadow-lg min-h-[200px] flex flex-col gap-2.5">
-                <h3 className="text-xl font-semibold">{item.title}</h3>
-                <ul className="text-muted-foreground leading-relaxed list-disc pl-5 space-y-2">
-                  {item.items.map((text, j) => <li key={j}>{text}</li>)}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Sharing & retention */}
-        <section className="py-12">
-          <div className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Sharing & retention</div>
-          <h2 className="text-3xl font-bold mb-6">Where data lives and how long we keep it</h2>
-          <div className="grid md:grid-cols-3 gap-5">
-            {[
-              {
-                title: "Storage & processors",
-                items: ["Supabase for user data and lists.", "RevenueCat for entitlements; Apple for payments.", "Firebase (when available) for analytics; TMDB/Watchmode for availability data."]
-              },
-              {
-                title: "Retention",
-                items: ["Data is kept while you maintain an account.", "Requests for export or deletion are honored at startingvibe2025@gmail.com."]
-              },
-              {
-                title: "Commitments",
-                items: ["We do not sell personal data.", "Providers only receive what's required to deliver the service.", "VibeWatch is intended for users 13+."]
-              },
-            ].map((item, i) => (
-              <div key={i} className="rounded-2xl border border-border bg-card/40 backdrop-blur p-5 shadow-lg flex flex-col gap-2.5">
-                <h3 className="text-xl font-semibold">{item.title}</h3>
-                <ul className="text-muted-foreground leading-relaxed list-disc pl-5 space-y-2">
-                  {item.items.map((text, j) => <li key={j}>{text}</li>)}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Your controls */}
-        <section className="py-12">
-          <div className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Your controls</div>
-          <h2 className="text-3xl font-bold mb-6">Manage permissions and requests</h2>
-          <div className="grid md:grid-cols-3 gap-5">
-            {[
-              {
-                title: "Permissions",
-                items: ["Notifications can be turned off in iOS Settings > Notifications.", "Analytics (when prompted) is optional; you can opt out in settings."]
-              },
-              {
-                title: "Access, export, delete",
-                items: ["Email startingvibe2025@gmail.com to access, export, or delete your data.", "We'll verify your request via your account email and respond promptly."]
-              },
-              {
-                title: "Changes to this policy",
-                items: ["Updates are posted on this page with a new \"Last updated\" date.", "Material changes may also be noted in-app."]
-              },
-            ].map((item, i) => (
-              <div key={i} className="rounded-2xl border border-border bg-card/40 backdrop-blur p-5 shadow-lg flex flex-col gap-2.5">
-                <h3 className="text-xl font-semibold">{item.title}</h3>
-                <ul className="text-muted-foreground leading-relaxed list-disc pl-5 space-y-2">
-                  {item.items.map((text, j) => <li key={j}>{text}</li>)}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Contact */}
-        <section className="py-12">
-          <div className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Contact</div>
-          <h2 className="text-3xl font-bold mb-4">Questions or requests?</h2>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Reach us anytime at <a href="mailto:startingvibe2025@gmail.com" className="text-primary hover:underline">startingvibe2025@gmail.com</a>. Include your device, app version, and a short description so we can help quickly.
+        <section className="py-8 border-t border-gray-200 dark:border-white/10 text-center md:text-left">
+          <p className="text-gray-600 dark:text-gray-400">
+            {privacy.contact}{" "}
+            <Link href="mailto:startingvibe2025@gmail.com" className="text-primary hover:text-primary-hover font-medium underline decoration-primary/30 underline-offset-2 transition-colors">
+              startingvibe2025@gmail.com
+            </Link>
           </p>
-          <div className="flex flex-wrap gap-3">
-            <Button asChild variant="secondary">
-              <Link href="/#support">Back to Support</Link>
-            </Button>
-            <Button asChild>
-              <Link href="/#download">Download VibeWatch</Link>
-            </Button>
-          </div>
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

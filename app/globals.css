@@ -25,16 +25,16 @@
     --ring: 18 100% 60%;
     --radius: 18px;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
+  
   body {
     @apply bg-background text-foreground;
     font-family: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
   /* Fluid Typography */
@@ -67,11 +67,6 @@
   /* Smooth scrolling for anchor links */
   html {
     scroll-behavior: smooth;
-  }
-
-  /* Prevent horizontal scroll on mobile */
-  body {
-    overflow-x: hidden;
   }
 }
 
@@ -107,8 +102,29 @@
   .carousel-progress {
     animation: carouselFill 5s linear forwards;
   }
+}
 
-  .carousel-progress-paused {
-    animation-play-state: paused;
-  }
+/* Custom Scrollbar from Stitch Design */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0C15;
+}
+::-webkit-scrollbar-thumb {
+  background: #2D3142;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF8C42;
+}
+
+.glow-primary {
+  box-shadow: 0 0 20px rgba(255, 140, 66, 0.2);
+}
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #FFFFFF, #9CA3AF);
 }
