@@ -107,6 +107,8 @@ type Translation = {
       ai: string;
       how: string;
       support: string;
+      pricing: string;
+      faq: string;
       terms: string;
       privacy: string;
     };
@@ -193,8 +195,8 @@ const baseTerms: Translation["terms"] = {
       {
         title: "Pricing",
         body: [
-              "Founding Member Pro: €3,99/mese o €34,99/anno (bloccato se attivo).",
-              "Standard Pro: €8,99/mese o €69,99/anno.",
+              "Founding Member Pro: €3,99/mese o €34,99/anno (bloccato se attivo).\n",
+              "Standard Pro: €8,99/mese o €69,99/anno.\n",
           "Prices shown in local currency before purchase; may vary by region/tax.",
         ],
       },
@@ -292,7 +294,9 @@ export const translations: Record<Locale, Translation> = {
         ai: "Vibe AI",
         how: "How it Works",
         support: "Support",
-        terms: "Terms",
+        pricing: "Pricing",
+        faq: "FAQ",
+        terms: "Terms of Use",
         privacy: "Privacy",
       },
       download: "Download App",
@@ -530,10 +534,12 @@ export const translations: Record<Locale, Translation> = {
         ai: "Vibe AI",
         how: "Come funziona",
         support: "Supporto",
-        terms: "Termini",
+        pricing: "Prezzi",
+        faq: "FAQ",
+        terms: "Termini d'uso",
         privacy: "Privacy",
       },
-      download: "Scarica l'app",
+      download: "Scarica l\'app",
       downloadNow: "Scarica ora",
       foundingChip: "Founding Member 3,99$/mese",
       mobileChip: "Founding 3,99$",
@@ -548,9 +554,9 @@ export const translations: Record<Locale, Translation> = {
     },
     terms: {
       hero: {
-        eyebrow: "Termini d'uso e abbonamenti",
+        eyebrow: "Termini d\'uso e abbonamenti",
         title: "Abbonamenti VibeWatch Pro ed EULA",
-        desc: "Termini su come funzionano gli abbonamenti Pro, regole di fatturazione/rinnovo ed EULA dell'app. Leggili prima dell'acquisto.",
+        desc: "Termini su come funzionano gli abbonamenti Pro, regole di fatturazione/rinnovo ed EULA dell\'app. Leggili prima dell\'acquisto.",
         badges: ["Ultimo aggiornamento: gennaio 2025", "Vale per: app iOS VibeWatch"],
       },
       cards: [
@@ -561,30 +567,30 @@ export const translations: Record<Locale, Translation> = {
             "Founding Member Pro Annuale — $34.99/anno (risparmi 27%, prezzo bloccato se attivo).",
             "Standard Pro Mensile — $8.99/mese (auto-rinnovo, dopo il periodo founding).",
             "Standard Pro Annuale — $69.99/anno (risparmi 35%).",
-            "Prezzi in USD; l'App Store converte in valuta locale.",
+            "Prezzi in USD; l\'App Store converte in valuta locale.",
             "I trial si convertono se non cancelli 24 ore prima della fine.",
           ],
         },
         {
           title: "Fatturazione e rinnovo",
           items: [
-            "Addebito su Apple ID al momento dell'acquisto; Apple mostra il prezzo prima dell'ordine.",
-            "Rinnovo automatico salvo disattivare l'auto-rinnovo 24h prima della scadenza.",
+            "Addebito su Apple ID al momento dell\'acquisto; Apple mostra il prezzo prima dell\'ordine.",
+            "Rinnovo automatico salvo disattivare l\'auto-rinnovo 24h prima della scadenza.",
             "Gestisci o cancella in Impostazioni iOS > ID Apple > Abbonamenti.",
           ],
         },
         {
           title: "Annullamento e rimborsi",
           items: [
-            "Puoi cancellare in Impostazioni iOS; l'accesso continua fino a fine periodo.",
+            "Puoi cancellare in Impostazioni iOS; l\'accesso continua fino a fine periodo.",
             "Rimborsi gestiti da Apple secondo le policy App Store.",
-            "Eliminare l'app non cancella l'abbonamento; disattiva l'auto-rinnovo nelle impostazioni.",
+            "Eliminare l\'app non cancella l\'abbonamento; disattiva l\'auto-rinnovo nelle impostazioni.",
           ],
         },
         {
           title: "Prezzo Founding bloccato",
           items: [
-            "Prezzo founding disponibile al lancio; bloccato finché l'abbonamento resta attivo.",
+            "Prezzo founding disponibile al lancio; bloccato finché l\'abbonamento resta attivo.",
             "Se annulli perdi il prezzo bloccato; al ritorno si applicano i prezzi standard.",
             "Vale solo per il piano scelto (Mensile o Annuale).",
           ],
@@ -598,15 +604,15 @@ export const translations: Record<Locale, Translation> = {
           {
             title: "Prezzi",
             body: [
-              "Founding Member Pro: €3,99/mese o €34,99/anno (bloccato se attivo).",
-              "Standard Pro: €8,99/mese o €69,99/anno.",
-              "Prezzi mostrati in valuta locale prima dell'acquisto; possono variare per regione/tasse.",
+              "Founding Member Pro: €3,99/mese o €34,99/anno (bloccato se attivo).\n",
+              "Standard Pro: €8,99/mese o €69,99/anno.\n",
+              "Prezzi mostrati in valuta locale prima dell\'acquisto; possono variare per regione/tasse.",
             ],
           },
           {
             title: "Pagamento e rinnovo",
             body: [
-              "Addebito sull'Apple ID al momento dell'acquisto.",
+              "Addebito sull\'Apple ID al momento dell\'acquisto.",
               "Rinnova salvo disattivare 24h prima della fine periodo.",
               "Il rinnovo viene addebitato su Apple ID; gestisci in impostazioni App Store.",
               "Il periodo di prova residuo decade quando acquisti un abbonamento.",
@@ -614,10 +620,7 @@ export const translations: Record<Locale, Translation> = {
           },
           {
             title: "Link richiesti",
-            body: [
-              "Privacy Policy: https://vibewatch.com/privacy",
-              "Termini d'uso (Apple EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
-            ],
+            body: ["Privacy Policy: https://vibewatch.com/privacy", "Termini d\'uso (Apple EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"],
           },
         ],
       },
@@ -635,7 +638,7 @@ export const translations: Record<Locale, Translation> = {
           body: [
             "Base account: email, ID dispositivo.",
             "Utilizzo: clip viste, like/skip, diagnostica sessioni.",
-            "Acquisti: stato abbonamento dall'App Store.",
+            "Acquisti: stato abbonamento dall\'App Store.",
           ],
         },
         {
@@ -651,7 +654,7 @@ export const translations: Record<Locale, Translation> = {
           body: [
             "Fornitori per analytics, errori e pagamenti (es. App Store).",
             "Non vendiamo i tuoi dati personali.",
-            "Dati conservati mentre l'account è attivo o richiesto per legge.",
+            "Dati conservati mentre l\'account è attivo o richiesto per legge.",
           ],
         },
         {
@@ -672,7 +675,7 @@ export const translations: Record<Locale, Translation> = {
         { text: "Nessuna vendita di dati. Non vendiamo i tuoi dati personali; i fornitori terzi ricevono solo ciò che serve per erogare il servizio." },
         { text: "Controlli tu i permessi in-app e nelle Impostazioni iOS (notifiche, analytics, posizione)." },
         { text: "Richiedi esportazione o cancellazione in qualsiasi momento via startingvibe2025@gmail.com", href: "mailto:startingvibe2025@gmail.com" },
-        { text: "Termini d'uso: Apple Standard EULA", href: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" },
+        { text: "Termini d\'uso: Apple Standard EULA", href: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" },
       ],
       contact: "Per domande privacy, scrivi a startingvibe2025@gmail.com.",
     },
@@ -693,7 +696,7 @@ export const translations: Record<Locale, Translation> = {
         metric: "In media meno di 2 minuti per scegliere",
         items: [
           { title: "Clip senza spoiler", desc: "Scene da 20–30 secondi che mostrano tono e ritmo senza svelare colpi di scena." },
-          { title: "AI che segue il tuo mood", desc: "Descrivi il tuo mood: l'AI cura una selezione corta così smetti di scrollare e inizi a guardare." },
+          { title: "AI che segue il tuo mood", desc: "Descrivi il tuo mood: l\'AI cura una selezione corta così smetti di scrollare e inizi a guardare." },
           { title: "Decisioni chiare", desc: "Link streaming, durata e segnali social proprio dove ti servono." },
         ],
       },
@@ -710,10 +713,10 @@ export const translations: Record<Locale, Translation> = {
           "Finisci per rivedere The Office",
         ],
         afterItems: [
-          "Apri l'app → clip istantanee",
+          "Apri l\'app → clip istantanee",
           "Swipe tra scene da 30 secondi",
           "Percepisci il mood senza spoiler",
-          "Chiedi all'AI: “Voglio un thriller mind‑bending”",
+          "Chiedi all\'AI: \"Voglio un thriller mind‑bending\"",
           "Stai guardando qualcosa di nuovo in 2 minuti",
         ],
       },
@@ -736,7 +739,7 @@ export const translations: Record<Locale, Translation> = {
         cards: [
           { title: "Partenza lampo", desc: "2 clip selezionate compaiono in pochi secondi: stai già guardando, non aspettando spot o trailer." },
           { title: "Feed vario", desc: "Film + serie bilanciati con generi diversi e classici per tenere fresca la tua lista." },
-          { title: "Adattivo all'engagement", desc: "Like, tempo di visione e liste regolano cosa vedi dopo. Salti? Vibe AI adatta il feed in tempo reale." },
+          { title: "Adattivo all\'engagement", desc: "Like, tempo di visione e liste regolano cosa vedi dopo. Salti? Vibe AI adatta il feed in tempo reale." },
         ],
       },
       ai: {
@@ -747,7 +750,7 @@ export const translations: Record<Locale, Translation> = {
         aiReplyOne:
           "Ne ho 3: Fracture (1h 53) con un twist in tribunale, Coherence (1h 29) per suspense sci‑fi, e The Invitation (1h 40) per una tensione lenta.",
         aiReplyTwo: "Vuoi trailer o clip rapide per ciascuno?",
-        promptChips: ['Prompt: "Serie sportive feel-good"', 'Prompt: "Thriller a combustione lenta stasera"'],
+        promptChips: ["Prompt: \"Serie sportive feel-good\"", "Prompt: \"Thriller a combustione lenta stasera\""],
         rightTitle: "Pronto a guardare quando vuoi",
         rightDesc:
           "Salva qualsiasi clip nelle liste, vedi dove è in streaming e sincronizza i dispositivi. Gratis: 15 clip al giorno. Pro: Clip e AI illimitati da 3,99$/mese (tariffa Founding Member - tempo limitato!)",
@@ -763,7 +766,7 @@ export const translations: Record<Locale, Translation> = {
         title: "Tre passi per il tuo nuovo preferito",
         steps: [
           { num: "01", title: "Apri la tab Clips", desc: "Premi play e scorri una selezione pre-caricata delle migliori scene del giorno. Dopamina istantanea, zero indecisione." },
-          { num: "02", title: "Chiedi a Vibe AI", desc: "Descrivi mood o vincoli. L'AI cura i titoli, mostra clip e aggiorna le raccomandazioni in tempo reale." },
+          { num: "02", title: "Chiedi a Vibe AI", desc: "Descrivi mood o vincoli. L\'AI cura i titoli, mostra clip e aggiorna le raccomandazioni in tempo reale." },
           { num: "03", title: "Salva e guarda", desc: "Aggiungi ai preferiti, condividi e apri dove è in streaming. Passa a Pro da 3,99$/mese (tariffa Founding Member - tempo limitato!)." },
         ],
       },
@@ -824,18 +827,18 @@ export const translations: Record<Locale, Translation> = {
             id: "download",
             name: "Scarica ora",
             price: "",
-            desc: "Ottieni VibeWatch sull'App Store con un tap.",
+            desc: "Ottieni VibeWatch sull\'App Store con un tap.",
             perks: ["Installazione immediata su iOS", "Sincronizza liste e preferenze", "Include piano gratuito + upgrade Pro"],
             chip: "Consigliato",
-            primaryCta: "Scarica l'app",
+            primaryCta: "Scarica l\'app",
             showCurrency: false,
           },
         ],
         appStoreCta: "Scarica su App Store",
         tryPromptsCta: "Prova i prompt Vibe AI",
-        legalIntro: "Informazioni sull'abbonamento VibeWatch Pro:",
+        legalIntro: "Informazioni sull\'abbonamento VibeWatch Pro:",
         legalLinks: {
-          terms: "Termini d'uso e dettagli abbonamento",
+          terms: "Termini d\'uso e dettagli abbonamento",
           privacy: "Privacy Policy",
           eula: "EULA Apple",
         },
@@ -866,7 +869,7 @@ export const translations: Record<Locale, Translation> = {
             title: "Legale e policy",
             desc: "Rivedi i dettagli che tengono trasparenti abbonamento e dati.",
             list: [
-              "Termini d'uso / EULA — termini di abbonamento, fatturazione e rinnovo.",
+              "Termini d\'uso / EULA — termini di abbonamento, fatturazione e rinnovo.",
               "Privacy Policy — cosa raccogliamo, perché e come richiedere la cancellazione.",
             ],
           },
@@ -896,16 +899,18 @@ export const translations: Record<Locale, Translation> = {
         ai: "Vibe AI",
         how: "Comment ça marche",
         support: "Support",
-        terms: "Conditions",
+        pricing: "Tarifs",
+        faq: "FAQ",
+        terms: "Conditions d\'utilisation",
         privacy: "Confidentialité",
       },
-      download: "Télécharger l'app",
+      download: "Télécharger l\'app",
       downloadNow: "Télécharger maintenant",
       foundingChip: "Founding Member 3,99$/mois",
       mobileChip: "Founding 3,99$",
     },
     stickyCta: {
-      title: "Commence à découvrir dès aujourd'hui",
+      title: "Commence à découvrir dès aujourd\'hui",
       subtitle: "15 clips gratuits par jour",
       cta: "Télécharger",
     },
@@ -914,14 +919,14 @@ export const translations: Record<Locale, Translation> = {
     },
     terms: {
       hero: {
-        eyebrow: "Conditions d’utilisation et abonnements",
+        eyebrow: "Conditions d\'utilisation et abonnements",
         title: "Abonnements VibeWatch Pro et EULA",
         desc: "Comment fonctionnent les abonnements Pro, la facturation/le renouvellement et l’EULA de l’app. À lire avant d’acheter.",
         badges: ["Dernière mise à jour : janvier 2025", "S’applique à : app iOS VibeWatch"],
       },
       cards: [
         {
-          title: "Options d’abonnement",
+          title: "Options d\'abonnement",
           items: [
             "Founding Member Pro Mensuel — 3,99$/mois (renouvellement auto, limité, prix bloqué tant qu’actif).",
             "Founding Member Pro Annuel — 34,99$/an (économie 27%, prix bloqué tant qu’actif).",
@@ -957,15 +962,15 @@ export const translations: Record<Locale, Translation> = {
         },
       ],
       required: {
-        title: "Détails d’abonnement requis par Apple",
+        title: "Détails d\'abonnement requis par Apple",
         items: [
-          { title: "Titre de l’abonnement", body: ["VibeWatch Pro"] },
+          { title: "Titre de l\'abonnement", body: ["VibeWatch Pro"] },
           { title: "Durées", body: ["Mensuel : 1 mois (auto-renouvelé)", "Annuel : 12 mois (auto-renouvelé)"] },
           {
             title: "Tarifs",
             body: [
-              "Founding Member Pro : 3,99$/mois ou 34,99$/an (bloqué si actif).",
-              "Standard Pro : 8,99$/mois ou 69,99$/an.",
+              "Founding Member Pro : 3,99$/mois ou 34,99$/an (bloqué si actif).\n",
+              "Standard Pro : 8,99$/mois ou 69,99$/an.\n",
               "Prix affichés en devise locale avant achat; peuvent varier selon région/taxes.",
             ],
           },
@@ -980,10 +985,7 @@ export const translations: Record<Locale, Translation> = {
           },
           {
             title: "Liens requis",
-            body: [
-              "Politique de confidentialité : https://vibewatch.com/privacy",
-              "Conditions d’utilisation (Apple EULA) : https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
-            ],
+            body: ["Politique de confidentialité : https://vibewatch.com/privacy", "Conditions d\'utilisation (Apple EULA) : https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"],
           },
         ],
       },
@@ -1128,7 +1130,7 @@ export const translations: Record<Locale, Translation> = {
         eyebrow: "Comment ça marche",
         title: "Trois étapes vers ton prochain favori",
         steps: [
-          { num: "01", title: "Ouvre l'onglet Clips", desc: "Appuie sur play et swipe une pile préchargée des meilleures scènes du jour. Dopamine instantanée, zéro hésitation." },
+          { num: "01", title: "Ouvre l'onglet Clips", desc: "Appuie sur play et swipe une pile préchargée des meilleures scènes du jour. Dopamina instantanée, zéro hésitation." },
           { num: "02", title: "Demande à Vibe AI", desc: "Décris mood ou contraintes. L'IA sélectionne les titres, diffuse des clips et ajuste les reco en temps réel." },
           { num: "03", title: "Sauvegarde et regarde", desc: "Ajoute aux listes, partage, ouvre où c'est en streaming. Passe en Pro dès 3,99$/mois (tarif Founding Member - temps limité !)." },
         ],
@@ -1262,7 +1264,9 @@ export const translations: Record<Locale, Translation> = {
         ai: "Vibe AI",
         how: "Cómo funciona",
         support: "Soporte",
-        terms: "Términos",
+        pricing: "Precios",
+        faq: "FAQ",
+        terms: "Términos de uso",
         privacy: "Privacidad",
       },
       download: "Descargar app",
@@ -1330,8 +1334,8 @@ export const translations: Record<Locale, Translation> = {
           {
             title: "Precios",
             body: [
-              "Founding Member Pro: $3.99/mes o $34.99/año (fijo mientras esté activo).",
-              "Standard Pro: $8.99/mes o $69.99/año.",
+              "Founding Member Pro: $3.99/mes o $34.99/año (fijo mientras esté activo).\n",
+              "Standard Pro: $8.99/mes o $69.99/año.\n",
               "Precios en moneda local antes de comprar; pueden variar por región/impuestos.",
             ],
           },
@@ -1346,10 +1350,7 @@ export const translations: Record<Locale, Translation> = {
           },
           {
             title: "Enlaces requeridos",
-            body: [
-              "Política de privacidad: https://vibewatch.com/privacy",
-              "Términos de uso (Apple EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
-            ],
+            body: ["Política de privacidad: https://vibewatch.com/privacy", "Términos de uso (Apple EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"],
           },
         ],
       },
@@ -1402,7 +1403,7 @@ export const translations: Record<Locale, Translation> = {
       keyPointsTitle: "Puntos clave de privacidad",
       keyPoints: [
         { text: "Sin venta de datos. Nunca vendemos tus datos personales. Los proveedores terceros solo reciben lo necesario para el servicio." },
-        { text: "Tú controlas los permisos en la app y en Ajustes de iOS (notificaciones, analytics, ubicación)." },
+        { text: "Tú controlas los permisos en la app y en Ajustes de iOS (notificações, analytics, ubicación)." },
         { text: "Solicita exportar o eliminar en cualquier momento vía startingvibe2025@gmail.com", href: "mailto:startingvibe2025@gmail.com" },
         { text: "Términos de uso: EULA estándar de Apple", href: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" },
       ],
@@ -1628,7 +1629,9 @@ export const translations: Record<Locale, Translation> = {
         ai: "Vibe AI",
         how: "Como funciona",
         support: "Suporte",
-        terms: "Termos",
+        pricing: "Preços",
+        faq: "FAQ",
+        terms: "Termos de uso",
         privacy: "Privacidade",
       },
       download: "Baixar app",
@@ -1696,8 +1699,8 @@ export const translations: Record<Locale, Translation> = {
           {
             title: "Preços",
             body: [
-              "Founding Member Pro: US$3,99/mês ou US$34,99/ano (fixo enquanto ativo).",
-              "Standard Pro: US$8,99/mês ou US$69,99/ano.",
+              "Founding Member Pro: US$3,99/mês ou US$34,99/ano (fixo enquanto ativo).\n",
+              "Standard Pro: US$8,99/mês ou US$69,99/ano.\n",
               "Preços em moeda local antes da compra; podem variar por região/impostos.",
             ],
           },
@@ -1712,10 +1715,7 @@ export const translations: Record<Locale, Translation> = {
           },
           {
             title: "Links exigidos",
-            body: [
-              "Política de Privacidade: https://vibewatch.com/privacy",
-              "Termos de uso (Apple EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
-            ],
+            body: ["Política de Privacidade: https://vibewatch.com/privacy", "Termos de uso (Apple EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"],
           },
         ],
       },
@@ -1834,7 +1834,7 @@ export const translations: Record<Locale, Translation> = {
         cards: [
           { title: "Início relâmpago", desc: "2 clipes selecionados aparecem em segundos: você já está assistindo, sem esperar anúncios ou trailers." },
           { title: "Feed diverso", desc: "Filmes + séries equilibrados com diversidade de gêneros e clássicos para manter a fila fresca." },
-          { title: "Ciente do engajamento", desc: "Likes, tempo de tela e listas ajustam o que vem depois. Pulou? Vibe AI adapta o feed ao vivo." },
+          { title: "Ciente do engajamento", desc: "Likes, tempo de visualização e listas ajustam o que vem depois. Pulou? Vibe AI adapta o feed ao vivo." },
         ],
       },
       ai: {

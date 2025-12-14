@@ -3,8 +3,16 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { PlayCircle, MessageCircle, Share2 } from "lucide-react";
+import { useTranslation } from "@/components/language-provider";
 
 export function Footer() {
+  const { t } = useTranslation();
+  
+  // Accessing nested objects via t() which returns any/T
+  // We'll cast to the expected structure matching lib/i18n.ts
+  const support = t<any>("home.support"); 
+  const legalLinks = t<any>("header.nav");
+
   return (
     <footer className="bg-gray-100 dark:bg-[#080910] border-t border-gray-200 dark:border-white/5 py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,32 +25,31 @@ export function Footer() {
               </Link>
             </div>
             <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-              We&apos;re here if you run into an issue, have a billing question, or want to share feedback about the clip feed or Vibe AI.
+              {support?.desc}
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-gray-900 dark:text-white mb-4">Contact support</h4>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">Email us at startingvibe2025@gmail.com. Include device, app version, and short description.</p>
+            <h4 className="font-bold text-gray-900 dark:text-white mb-4">{support?.cards?.[0]?.title}</h4>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{support?.cards?.[0]?.desc}</p>
           </div>
           <div>
-            <h4 className="font-bold text-gray-900 dark:text-white mb-4">What we can help with</h4>
+            <h4 className="font-bold text-gray-900 dark:text-white mb-4">{support?.cards?.[1]?.title}</h4>
             <ul className="text-sm text-gray-500 dark:text-gray-400 space-y-2">
-              <li>Account access & sign-in</li>
-              <li>Billing and subscriptions</li>
-              <li>Reporting bugs/broken clips</li>
-              <li>Data export requests</li>
+              {support?.cards?.[1]?.list?.map((item: string, i: number) => (
+                <li key={i}>{item}</li>
+              ))}
             </ul>
           </div>
           <div>
-            <h4 className="font-bold text-gray-900 dark:text-white mb-4">Legal & Policies</h4>
+            <h4 className="font-bold text-gray-900 dark:text-white mb-4">{support?.cards?.[3]?.title || "Legal & Policies"}</h4>
             <ul className="text-sm text-gray-500 dark:text-gray-400 space-y-2">
-              <li><Link className="hover:text-primary transition-colors" href="/terms">Terms of Use / EULA</Link></li>
-              <li><Link className="hover:text-primary transition-colors" href="/privacy">Privacy Policy</Link></li>
+              <li><Link className="hover:text-primary transition-colors" href="/terms">{legalLinks?.terms}</Link></li>
+              <li><Link className="hover:text-primary transition-colors" href="/privacy">{legalLinks?.privacy}</Link></li>
             </ul>
           </div>
         </div>
         <div className="border-t border-gray-200 dark:border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-gray-500 text-center md:text-left">© 2025 VibeWatch. All rights reserved.</p>
+          <p className="text-xs text-gray-500 text-center md:text-left">© 2024 VibeWatch. All rights reserved.</p>
           <div className="flex gap-4">
             <Link className="w-8 h-8 rounded-full bg-gray-200 dark:bg-white/5 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors" href="#">
               <Share2 className="w-4 h-4 fill-current" />
