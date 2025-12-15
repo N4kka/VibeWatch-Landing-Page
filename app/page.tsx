@@ -110,7 +110,7 @@ export default function Home() {
                 className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto pt-2 justify-center lg:justify-end"
                 variants={fadeInUp}
               >
-                <Link href="https://testflight.apple.com/join/6xaAaANs" target="_blank" rel="noopener noreferrer">
+                <Link href="https://apps.apple.com/us/app/vibewatch-movies-tv/id6755368352" target="_blank" rel="noopener noreferrer">
                   <motion.button 
                     className="bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full font-bold text-lg flex items-center gap-3 transition-all shadow-lg shadow-primary/30 hover:shadow-primary/50"
                     whileHover={{ scale: 1.05 }}
@@ -511,7 +511,7 @@ export default function Home() {
                       ))}
                     </ul>
                   </div>
-                  <Link href="https://testflight.apple.com/join/6xaAaANs" target="_blank" rel="noopener noreferrer" className="block w-full">
+                  <Link href="https://apps.apple.com/us/app/vibewatch-movies-tv/id6755368352" target="_blank" rel="noopener noreferrer" className="block w-full">
                     <button className="w-full py-3 rounded-xl border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">{home.cta.plans[0].primaryCta}</button>
                   </Link>
                 </motion.div>
@@ -529,13 +529,13 @@ export default function Home() {
                       ))}
                     </ul>
                   </div>
-                  <Link href="https://testflight.apple.com/join/6xaAaANs" target="_blank" rel="noopener noreferrer" className="block w-full">
+                  <Link href="https://apps.apple.com/us/app/vibewatch-movies-tv/id6755368352" target="_blank" rel="noopener noreferrer" className="block w-full">
                     <button className="w-full py-3 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold shadow-lg shadow-primary/25 transition-all transform hover:scale-[1.02]">{home.cta.plans[1].primaryCta}</button>
                   </Link>
                 </motion.div>
               </div>
               <div className="flex flex-col md:flex-row justify-center items-center gap-4">
-                <Link href="https://testflight.apple.com/join/6xaAaANs" target="_blank" rel="noopener noreferrer">
+                <Link href="https://apps.apple.com/us/app/vibewatch-movies-tv/id6755368352" target="_blank" rel="noopener noreferrer">
                   <button className="bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded-full font-bold flex items-center gap-2 transition-all">
                     <Apple className="w-5 h-5 fill-current" />
                     {home.cta.appStoreCta}

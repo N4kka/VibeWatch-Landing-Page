@@ -39,7 +39,7 @@ export function StickyCTA() {
                   <p className="text-xs text-muted-foreground truncate">{t("stickyCta.subtitle")}</p>
                 </div>
                 <Button asChild size="sm" className="shrink-0">
-                  <Link href="/#download" className="flex items-center gap-2">
+                  <Link href="https://apps.apple.com/us/app/vibewatch-movies-tv/id6755368352" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                     <Download className="w-4 h-4" />
                     {t("stickyCta.cta")}
                   </Link>

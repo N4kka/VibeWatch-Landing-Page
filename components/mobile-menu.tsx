@@ -111,7 +111,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               {/* CTA Button */}
               <div className="p-6 border-t border-border">
                 <Button asChild size="lg" className="w-full">
-                  <Link href="/#download" onClick={onClose}>
+                  <Link href="https://apps.apple.com/us/app/vibewatch-movies-tv/id6755368352" target="_blank" rel="noopener noreferrer" onClick={onClose}>
                     {t("home.cta.appStoreCta")}
                   </Link>
                 </Button>
