@@ -37,7 +37,7 @@ export default function TermsPage() {
                 <div className="font-bold text-gray-900 dark:text-white mb-2">{item.title}</div>
                 <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                   {item.body.map((line: string) => {
-                    const privacyUrl = "https://vibewatch.com/privacy";
+                    const privacyUrl = "https://www.vibe-watch.com/privacy";
                     const appleUrl = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/";
 
                     if (line.includes(privacyUrl)) {

@@ -213,7 +213,7 @@ const baseTerms: Translation["terms"] = {
       },
       {
         title: "Required links",
-        body: ["Privacy Policy: https://vibewatch.com/privacy", "Terms of Use (Apple EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"],
+        body: ["Privacy Policy: https://www.vibe-watch.com/privacy", "Terms of Use (Apple EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"],
       },
     ],
   },
@@ -624,7 +624,7 @@ export const translations: Record<Locale, Translation> = {
           },
           {
             title: "Link richiesti",
-            body: ["Privacy Policy: https://vibewatch.com/privacy", "Termini d'uso (Apple EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"]
+            body: ["Privacy Policy: https://www.vibe-watch.com/privacy", "Termini d'uso (Apple EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"]
           },
         ],
       },
@@ -992,7 +992,7 @@ export const translations: Record<Locale, Translation> = {
           {
             title: "Liens requis",
             body: [
-              "Politique de confidentialité : https://vibewatch.com/privacy",
+              "Politique de confidentialité : https://www.vibe-watch.com/privacy",
               "Conditions d\'utilisation (Apple EULA) : https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
             ],
           },
@@ -1361,7 +1361,7 @@ export const translations: Record<Locale, Translation> = {
           },
           {
             title: "Enlaces requeridos",
-            body: ["Política de privacidad: https://vibewatch.com/privacy", "Términos de uso (Apple EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"],
+            body: ["Política de privacidad: https://www.vibe-watch.com/privacy", "Términos de uso (Apple EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"],
           },
         ],
       },
@@ -1728,7 +1728,7 @@ export const translations: Record<Locale, Translation> = {
           },
           {
             title: "Links exigidos",
-            body: ["Política de Privacidade: https://vibewatch.com/privacy", "Termos de uso (Apple EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"],
+            body: ["Política de Privacidade: https://www.vibe-watch.com/privacy", "Termos de uso (Apple EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"],
           },
         ],
       },

@@ -1,7 +1,7 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { 
   Download, 
@@ -21,30 +21,34 @@ import {
   ChevronRight,
   Search as SearchIcon,
   Compass,
-  X,
-  Menu
+  X
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, type PanInfo } from "framer-motion";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { useTranslation } from "@/components/language-provider";
+import { translations } from "@/lib/i18n";
 import { fadeInUp, staggerContainer, float, scaleOnHover } from "@/lib/animations";
 
 const ICONS = [Play, Compass, Bolt, Heart, Info, SearchIcon];
+type HomeTranslations = typeof translations.en.home;
+type HeaderTranslations = typeof translations.en.header;
+type ShowcaseCard = HomeTranslations["showcase"]["cards"][number];
+type CarouselItem = ShowcaseCard & { src: string; icon: (typeof ICONS)[number] };
 
 export default function Home() {
   const { t } = useTranslation();
-  const home = t<any>("home");
-  const header = t<any>("header");
+  const home = t<HomeTranslations>("home");
+  const header = t<HeaderTranslations>("header");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
   // Construct carousel items from translations + static images/icons
-  const carouselItems = home?.showcase?.cards?.map((card: any, i: number) => ({
+  const carouselItems: CarouselItem[] = (home?.showcase?.cards ?? []).map((card, i) => ({
     ...card,
     src: `/${i + 1}.png`,
     icon: ICONS[i] || Play
-  })) || [];
+  }));
 
   // Auto-play
   useEffect(() => {
@@ -55,8 +59,8 @@ export default function Home() {
     return () => clearInterval(timer);
   }, [isHovered, carouselItems.length]);
 
-  const handleDragEnd = (e: any, { offset, velocity }: any) => {
-    const swipe = offset.x;
+  const handleDragEnd = (_event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    const swipe = info.offset.x;
 
     if (swipe < -50) {
       nextSlide();
@@ -151,10 +155,13 @@ export default function Home() {
                 </div>
                 {/* Images inside frame (with padding to fit) */}
                 <div className="absolute inset-0 bg-gray-900 flex flex-col overflow-hidden">
-                  <img 
-                    alt="App Screenshot" 
-                    className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 ease-out" 
+                  <Image
+                    alt="App Screenshot"
                     src="/stranger_things.png"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 320px, 320px"
+                    className="object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
                 </div>
               </motion.div>
@@ -287,7 +294,7 @@ export default function Home() {
 
       {/* Animated Carousel Section */}
       <section className="py-24 bg-gradient-to-b from-surface-dark to-background-dark overflow-hidden relative" id="how-it-works">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+        <div className="absolute inset-0 hero-noise opacity-10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <span className="text-primary font-semibold tracking-wider text-sm uppercase mb-2 block">{home.showcase.eyebrow}</span>
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-16">{home.showcase.title}</h2>
@@ -323,9 +330,9 @@ export default function Home() {
                   dragElastic={0.2}
                   onDragEnd={handleDragEnd}
                 >
-                  {carouselItems.map((item: any, i: number) => (
+                  {carouselItems.map((item, i: number) => (
                     <div key={i} className="min-w-full h-full relative">
-                      <img src={item.src} alt={item.title} className="w-full h-full object-cover" />
+                      <Image src={item.src} alt={item.title} fill sizes="320px" className="object-cover" />
                     </div>
                   ))}
                 </motion.div>
@@ -457,7 +464,7 @@ export default function Home() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 z-10">
                 <motion.div whileHover="hover" variants={scaleOnHover} className="bg-black/40 p-4 rounded-xl border border-white/5 hover:border-accent-purple/50 transition-colors cursor-pointer group">
                   <div className="h-24 w-full bg-gray-800 rounded-lg mb-3 overflow-hidden relative">
-                    <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="/5.png" alt="Neon Alley"/>
+                    <Image src="/5.png" alt="Neon Alley" fill sizes="(max-width: 640px) 100vw, 50vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                       <Play className="text-white fill-current w-8 h-8" />
                     </div>
@@ -467,7 +474,7 @@ export default function Home() {
                 </motion.div>
                 <motion.div whileHover="hover" variants={scaleOnHover} className="bg-black/40 p-4 rounded-xl border border-white/5 hover:border-primary/50 transition-colors cursor-pointer group">
                   <div className="h-24 w-full bg-gray-800 rounded-lg mb-3 overflow-hidden relative">
-                    <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="/6.png" alt="Golden Hour"/>
+                    <Image src="/6.png" alt="Golden Hour" fill sizes="(max-width: 640px) 100vw, 50vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                       <Play className="text-white fill-current w-8 h-8" />
                     </div>
@@ -559,7 +566,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-4">{home.faq.title}</h2>
             <p className="text-center text-gray-600 dark:text-gray-400 mb-12">{home.faq.subtitle}</p>
             <div className="space-y-4">
-              {home.faq.items.map((item: any, i: number) => (
+              {home.faq.items.map((item: HomeTranslations["faq"]["items"][number], i: number) => (
                 <details key={i} className="group bg-white dark:bg-surface-dark border border-gray-200 dark:border-white/5 rounded-2xl open:border-primary/50 transition-colors">
                   <summary className="flex justify-between items-center cursor-pointer p-6 list-none font-semibold text-gray-900 dark:text-white">
                     <span>{item.q}</span>

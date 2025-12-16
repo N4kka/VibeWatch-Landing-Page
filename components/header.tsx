@@ -1,7 +1,7 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { LanguageSwitcher } from "@/components/language-switcher";
@@ -17,7 +17,7 @@ export function Header() {
         <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer">
             <Link href="/" className="flex items-center gap-2">
-              <img src="/logo.png" alt="VibeWatch Logo" className="w-8 h-8 rounded-full" />
+              <Image src="/logo.png" alt="VibeWatch Logo" width={32} height={32} className="w-8 h-8 rounded-full" />
               <span className="font-bold text-xl tracking-tight text-gray-900 dark:text-white">VibeWatch</span>
             </Link>
           </div>

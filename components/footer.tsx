@@ -1,17 +1,16 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import { PlayCircle, MessageCircle, Share2 } from "lucide-react";
+import Image from "next/image";
+import { MessageCircle, Share2 } from "lucide-react";
 import { useTranslation } from "@/components/language-provider";
+import { translations } from "@/lib/i18n";
 
 export function Footer() {
   const { t } = useTranslation();
   
-  // Accessing nested objects via t() which returns any/T
-  // We'll cast to the expected structure matching lib/i18n.ts
-  const support = t<any>("home.support"); 
-  const legalLinks = t<any>("header.nav");
+  const support = t<typeof translations.en.home.support>("home.support");
+  const legalLinks = t<typeof translations.en.header.nav>("header.nav");
 
   return (
     <footer className="bg-gray-100 dark:bg-[#080910] border-t border-gray-200 dark:border-white/5 py-12 md:py-16">
@@ -20,7 +19,7 @@ export function Footer() {
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center gap-2 cursor-pointer mb-4">
               <Link href="/" className="flex items-center gap-2">
-                <img src="/logo.png" alt="VibeWatch Logo" className="w-6 h-6 rounded-full" />
+                <Image src="/logo.png" alt="VibeWatch Logo" width={24} height={24} className="w-6 h-6 rounded-full" />
                 <span className="font-bold text-lg tracking-tight text-gray-900 dark:text-white">VibeWatch</span>
               </Link>
             </div>
